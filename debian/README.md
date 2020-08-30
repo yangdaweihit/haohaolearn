@@ -3,6 +3,7 @@
 - [介绍](https://zh.wikipedia.org/wiki/Debian)
 - [下载与安装](download.md)
 - [配置](config.md)
+- [硬件](hardware.md)
 - [软件](software.md)
 - [个性化](theme.md)
 - [命令备忘](./cmd.md)
