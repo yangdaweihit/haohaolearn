@@ -1,6 +1,6 @@
 * 安装
-** 系统：Debian/Linux Bullseye
-** 版本：ANSYS 2020R1
+  - 系统：Debian/Linux Bullseye
+  - 版本：ANSYS 2020R1
 ** 依赖：
     #+begin_src 
     sudo apt-get install libmotif-dev libxtst-dev  libxt-dev libzip-dev libxmu-dev libpng-dev 
