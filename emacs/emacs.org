@@ -1,0 +1,4 @@
+* Emacs
+  - [[file:org.org][25.10 Org Mode]]
+  - [[file:dired.md][30 Dired, the Directory Editor]]
+  - [[file:calendar.org][31 Calendar/Diary]]
