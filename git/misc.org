@@ -16,7 +16,6 @@
 
 - `, v a`: git-add-current-file 
 
-
 ** 检出
    - git checkout <commit> <file> 检出某个提交的某个文件
    - [[http://nicolasgallagher.com/git-checkout-specific-files-from-another-branch/][files from another branch]]: git checkout [branch] -- [file of directory]

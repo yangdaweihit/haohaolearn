@@ -88,7 +88,6 @@ git config --global core.editor vim
 ### 命令
 
 - [GitHowTo](https://githowto.com/)
-- [命令清单](http://www.codeceo.com/article/git-command-list.html)
 
 ## 笔记
 
