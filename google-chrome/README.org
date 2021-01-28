@@ -1,0 +1,3 @@
+* Google-chrome
+
+  - [[file:shortcuts.org][shortcuts]]
