@@ -5,6 +5,7 @@
 - [Debian源使用帮助](https://mirrors.ustc.edu.cn/help/debian.html)
 - [Debiancn源使用帮助](https://mirrors.ustc.edu.cn/help/debiancn.html)
 - [Debian中文软件仓库](https://repo.debiancn.org/)
+- [铜豌豆软件源](https://www.atzlinux.com/allpackages.htm)
 - <https://wiki.debian.org/SourcesList>
 - <https://www.debian.org/doc/manuals/apt-howto/ch-basico.en.html>
 - <https://www.debian.org/doc/manuals/debian-handbook/apt.en.html#sect.apt-sources.list>
