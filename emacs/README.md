@@ -22,7 +22,6 @@
 
 ## 插件
 
-- [Dired](dired.md)
 - auctex
 - ess
 - ess-smart-underscore

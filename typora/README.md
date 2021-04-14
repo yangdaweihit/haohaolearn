@@ -3,8 +3,8 @@
 <div align="center">
 <img src="./markdown.png" align="middle" style="zoom:100%;" /> &emsp; &emsp;&emsp;<img src="./typora.png" align="middle" style="zoom:100%;" /> 
 </div>
-
 这是一个关于写文档的文档。
+
 
 - 参考：
   - https://support.typora.io/Markdown-Reference/
@@ -87,7 +87,7 @@ Markdown用邮件样式`>`符号表示块引用。
 >
 > This is second pragraph. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 
-- 快捷键：`Ctrl + Shif + Q`表示1级标题，以此类推。
+- 快捷键：`Ctrl + Shif + Q`。
 
 [HOME](#Markdown + Typora)
 
@@ -109,8 +109,8 @@ Markdown用邮件样式`>`符号表示块引用。
   3.	Blue
   ```
 
-- 按`Tab`键可向下级转换列表层级。
-- 按`Shift + Tab`键可向上级转换列表层级。
++ 按`Tab`键可向下级转换列表层级。
++ 按`Shift + Tab`键可向上级转换列表层级。
 
 [HOME](#Markdown + Typora)
 
@@ -507,8 +507,10 @@ X^2^
 使用`<video>`标签可嵌入视频：
 
 ```Markdown
-<video src="xxx.mp4" />
+<video src="Shear in Beams Model.mp4" />
 ```
+
+<video src="Shear in Beams Model.mp4"/>
 
 [HOME](#Markdown + Typora)
 

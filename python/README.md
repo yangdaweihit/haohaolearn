@@ -1,21 +1,33 @@
 # Python
 
+
+## 背景
+
+- [Python简史](https://www.cnblogs.com/vamei/archive/2013/02/06/2892628.html)
+
+## 官方文档
+
+关于Python的所有信息都源自官方文档。所谓文档，是一个包括入门教程、库手册、
+语法手册、安装和用法等在内的文本集合。几乎不太可能在阅读过所有文档后再使
+用Python。一方面内容太多，另一方面文档也会随着版本升级而有所变化。文档的
+意义在于，它对Python提供了最具权威的解释，供我们探究本源。
+
+- [官方文档](https://docs.python.org/3/index.html)
+- [官方教程(中文)](https://docs.python.org/zh-cn/3/tutorial/)
+- [标准库(中文)](https://docs.python.org/zh-cn/3/library/index.html#library-index) 
+- [术语(中文)](https://docs.python.org/zh-cn/3/glossary.html#glossary)
+
 ## 教程 
 
-- [官方教程](https://docs.python.org/zh-cn/3/tutorial/)
+- [Python-100天从新手到大
+  师](https://github.com/jackfrued/Python-100-Days)：自学最佳路径
 - [python3菜鸟教程](http://www.runoob.com/python3/python3-tutorial.html)
-- [python-course(Bernd.C.Klein)](https://www.python-course.eu/index.php) 
+- [python-course](https://www.python-course.eu/index.php)
+  - [Numerical Programming with Python](https://www.python-course.eu/numerical_programming_with_python.php)
 - [realpytho](https://realpython.com): real python团队
 - [BogoToBogo](https://www.bogotobogo.com/python/pytut.php): BogoToBogo
-- [Python-100天从新手到大师](https://github.com/jackfrued/Python-100-Days): 骆昊
-- [Python基础教程](http://c.biancheng.net/python/): C语言中文网
-- [Numerical Programming with Python](https://www.python-course.eu/numerical_programming_with_python.php)
 - [matplotlib tutorials](https://matplotlib.org/tutorials/introductory/usage.html#sphx-glr-tutorials-introductory-usage-py)
-  
-## 手册
-
-- [标准库](https://docs.python.org/3/library/index.html): Pythons标准库
-  包括C语言写的内建模块，以及常见问题的标准化解决方案的模块。
+- [正则表达式30分钟入门课程](https://deerchao.cn/tutorials/regex/regex.htm)
   
 ## pip
 

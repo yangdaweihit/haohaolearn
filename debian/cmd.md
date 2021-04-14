@@ -2,6 +2,29 @@
 
 - [Linux命令大全](man.linuxde.net)
 
+## Linux系统中分区格式化u盘
+
+1. 查看u盘设备名称
+
+   > sudo fdisk -l
+
+2. 查看符合u盘空间的设备，确定设备名称，如`/dev/sdb`。
+
+3. 在u盘设备上建立分区
+
+   > sudo fdisk /dev/sdb
+
+   进入`fdisk`界面后，使用命令建立分区：
+
+   - m: 查看命令清单
+   - n: 建立分区
+   - t: 转换分区类型，`07`表示`NTFS`分区
+   - w：写入分区
+
+4. 格式化
+
+   > sudo mkfs.ntfs -f /dev/sdb1
+
 ## mkntfs
 
 - 建立一个NTFS文件系统

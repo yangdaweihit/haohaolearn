@@ -2,7 +2,7 @@
 
 ## 安装和运行
 
-- [安装](installation/README.md)
+- [安装](installation/README.org)
 - [运行](operation/README.md)
 
 ## 命令

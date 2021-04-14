@@ -1,0 +1,32 @@
+* The Calendar and the Diary
+  + ~M-x calendar~ : 打开日历
+  + ~C-u M-x calendar~ : 打开日历
+** Calendar Motion
+*** Movement in the Calendar
+**** Calendar Unit Motion
+     + ~C-f~ : 向前一天
+     + ~C-b~ : 向回一天
+     + ~C-n~ : 向下周同一天
+     + ~C-p~ : 向上周同一天
+     + ~M-}~ : 向前一个月
+     + ~M-{~ : 向前一个月
+     + ~C-x ]~ : 向前一年
+     + ~C-x [~ : 向后一年
+**** Beginning or End of Week, Month or Year
+     + ~C-a~ : 周头
+     + ~C-e~ : 周尾
+     + ~M-a~ : 月头
+     + ~M-e~ : 月尾
+     + ~M-<~ : 年头
+     + ~M->~ : 年尾
+**** Specified Dates
+     + ~g d~ : 指定日期
+     + ~g D~ : 指定年中某天
+     + ~g w~ : 指定周
+     + ~.~ : 今天
+** Scrolling in the Calendar
+** Counting Days 
+   + ~M-=~ : 显示当前选择中的天数
+   + ~C-SPC~ : 设定标记，后移动至结尾日，即可由 ~M-=~ 统计天数
+   
+   
