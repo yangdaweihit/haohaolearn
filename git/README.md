@@ -80,6 +80,20 @@ git config --global credential.helper store
 https://user:token@github.com
 ```
 
+### 建立仓库步骤
+
+1. 在git托管平台上建立一个不含任何文件的库，生成库地址<remote>
+2. 在本地文件夹建立项目<local>文件夹
+3. cd <local>
+4. git init
+6. git branch -M <branch>
+7. 生成合适的.gitignore
+8. git add .
+9. git commit -m "init"
+10. git remote add origin <remote>
+11. git push --set-upstream <remote> <branch> 
+
+参考: [How To Set Upstream Branch on Git](https://devconnected.com/how-to-set-upstream-branch-on-git/)
 
 ## 教程
 
