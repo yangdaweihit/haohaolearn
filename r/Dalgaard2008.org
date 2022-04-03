@@ -1,0 +1,10 @@
+* Basics
+* The R environment
+* Probability and distributions
+ADER: \usetikzlibrary{shapes,arrows}
+#+HTML_HEAD_EXTRA: <style> blockquote {background:#EEEEEE; padding: 3px 13px}</style>
+#+LATEX_HEADER: \usepackage[bottom=2.5cm]{geometry}
+
+* Basics
+* The R environment
+* Probability and distributions

@@ -1,0 +1,3575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-02-09 Sun 20:22 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="wall-e" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org9f47558">1. 精准表达</a>
+<ul>
+<li><a href="#org05b1e0d">1.1. 高田贵久</a></li>
+</ul>
+</li>
+<li><a href="#org340e870">2. 目录</a></li>
+<li><a href="#org6526bc1">3. 全书摘要和评论</a>
+<ul>
+<li><a href="#org8ce18d8">3.1. 序言 何为书面沟通的技术</a>
+<ul>
+<li><a href="#org2b05fbd">3.1.1. 本书的结构</a></li>
+<li><a href="#orgc76b164">3.1.2. 书面沟通的技术对谁有益</a></li>
+<li><a href="#orgcaa1883">3.1.3. 方案为何难以通过</a></li>
+</ul>
+</li>
+<li><a href="#org5c56c3c">3.2. 序章 一个关于开展新业务的故事</a>
+<ul>
+<li><a href="#orgad4dd20">3.2.1. STORY-0 创办新业务的任命</a></li>
+</ul>
+</li>
+<li><a href="#orgcb1ce22">3.3. 第1章 提交方案的技术</a>
+<ul>
+<li><a href="#orgdbcedae">3.3.1. STORY-1 命运般的邂逅</a></li>
+<li><a href="#org366c712">3.3.2. 序节 磨练提交方案的能力</a></li>
+</ul>
+</li>
+<li><a href="#org7b64ee7">3.4. 第2章 逻辑思考能力，组织语言的能力</a>
+<ul>
+<li><a href="#orgd010db0">3.4.1. STORY-2 中间报告的走向</a></li>
+<li><a href="#org3bfb37d">3.4.2. 序节 何为逻辑</a></li>
+<li><a href="#org74a02d2">3.4.3. 第1节 建立纵向逻辑</a></li>
+<li><a href="#org41e82a9">3.4.4. 第2节 建立横向逻辑</a></li>
+</ul>
+</li>
+<li><a href="#org0fc4801">3.5. 第3章 验证假说能力 回答疑问的步骤</a>
+<ul>
+<li><a href="#org52e94c1">3.5.1. STORY-3 最终报告的失策</a></li>
+<li><a href="#orga3c4f74">3.5.2. 序节 何为验证假说能力</a></li>
+<li><a href="#org041e0ee">3.5.3. 第1节 理解目的</a></li>
+<li><a href="#org98488ae">3.5.4. 第2节 把握论点</a></li>
+<li><a href="#org0711544">3.5.5. 第3节 构建假说</a></li>
+<li><a href="#org414862f">3.5.6. 第4节 实施验证</a></li>
+<li><a href="#org25fb176">3.5.7. 第5节 提取启发</a></li>
+</ul>
+</li>
+<li><a href="#orgafa8652">3.6. 第4章 会议设计能力 总结技巧</a>
+<ul>
+<li><a href="#orgc795edc">3.6.1. STORY-4 开始交涉合作事宜</a></li>
+<li><a href="#org08e014f">3.6.2. 序节 何为会议设计</a></li>
+<li><a href="#org2bcd0a7">3.6.3. 第1节 确定着陆点</a></li>
+<li><a href="#orgeb0c294">3.6.4. 第2节 决定着陆形式</a></li>
+</ul>
+</li>
+<li><a href="#orgf3eea39">3.7. 第5章 制作商务文本的能力 制作书面资料的步骤</a>
+<ul>
+<li><a href="#org935952c">3.7.1. STORY-5 未能通过的方案</a></li>
+<li><a href="#org6e9e5d9">3.7.2. 序节 何为制作商务文本的能力</a></li>
+<li><a href="#orgb08502e">3.7.3. 第1节 文字信息要简单明了</a></li>
+<li><a href="#org67c23d3">3.7.4. 第2节 把文字信息制作图表</a></li>
+<li><a href="#org8b7c6eb">3.7.5. 第3节 配置幻灯片</a></li>
+<li><a href="#org4e9495e">3.7.6. 第4节 完成资料包</a></li>
+<li><a href="#org924e6b4">3.7.7. 第5节 整合资料群</a></li>
+</ul>
+</li>
+<li><a href="#org8ed4c7d">3.8. 第6章 终章</a>
+<ul>
+<li><a href="#orgdb0c649">3.8.1. STORY-6 方案的成功</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org5127f15">4. 评述</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9f47558" class="outline-2">
+<h2 id="org9f47558"><span class="section-number-2">1</span> 精准表达</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>书名：精准表达：让你的方案在最短的时间内打动人心</li>
+<li>著者：[日]高田贵久</li>
+<li>译者：宋晓煜</li>
+</ul>
+</div>
+
+<div id="outline-container-org05b1e0d" class="outline-3">
+<h3 id="org05b1e0d"><span class="section-number-3">1.1</span> 高田贵久</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>先后在三家咨询公司从业八年，之后创立的Precena Strategic Partners公司，
+提倡商务咨询的体系化和普及。</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org340e870" class="outline-2">
+<h2 id="org340e870"><span class="section-number-2">2</span> 目录</h2>
+<div class="outline-text-2" id="text-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">章</th>
+<th scope="col" class="org-left">节</th>
+<th scope="col" class="org-left">小节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">序言   何为书面沟通的技术</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">本书的结构</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">书面沟通的技术对谁有益</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">方案为何难以通过</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">序章   一个关于开展新业务的故事</td>
+<td class="org-left">STORY-0 创办新业务的任命</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">前途多艰的课题</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">向Precena咨询公司求助</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">成形的脚本</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">共同业务的启动</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">第1章  提交方案的技术</td>
+<td class="org-left">STORY-1 命运般的邂逅</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">中山先生的烦恼</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">难以理解的提案介绍</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">从怀疑到期待</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">社长的反对</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">序节 磨练提交方案的能力</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">每天都在提交方案</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">提交方案就要努力让方案通过</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">书面资料</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">制作书面资料的过程有利于理清自己的思路</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">书面资料可以让演讲者言之有物</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">如何提高书面沟通能力</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">合理思考所需的必要条件</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">妥当表达所需的必要条件</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">要点 书面沟通的技术</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">第2章  逻辑思考能力 组织语言的能力</td>
+<td class="org-left">STORY-2 中间报告的走向</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">不断涨高的紧张感</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">最初的疑问</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">报告会结束之后</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">序节 何为逻辑</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">逻辑的必要性</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">逻辑具体是指什么</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">对方不理解的情况包括两种</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">为何对方会问：真是这样的吗</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">纵向逻辑的理想状态</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">为何对方会问：只是这样的吗</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">横向逻辑的理想状态</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">逻辑合理与否由对方判断</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">要点 何为逻辑</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">建立纵向逻辑</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">纵向逻辑薄弱的三个原因</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">如何消除导致纵向逻辑薄弱的因素</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">要点 建立纵向逻辑</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">建立横向逻辑</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">横向逻辑的组合</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">为何无法实现MECE状态</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">体会语言中的层次感</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">把不同角度的概念归拢到同一平面</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">如何实现MECE状态</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">完成横向逻辑</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">最终形成金字塔结构</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">要点 建立横向逻辑</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">第3章  验证假说能力 回答疑问的步骤</td>
+<td class="org-left">STORY-3 最终报告的失策</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">暴风雨前的宁静</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">户畸的提案要点</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">巨大的误会</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">留下的作业</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">序节 何为验证假说能力</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">逻辑思考的陷阱</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">地毯式轰炸般提问和无凭无据的断言</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">假说验证的五个步骤</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">要点 何为假说验证能力</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">理解目的</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">讨论的立场和对方的要求</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">讨论的立场包括两种</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">要求对方做判断</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">总结要更具体</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">感性思维不可或缺</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">结果是由对方决定</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">要点 理解目的</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">把握论点</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">何为论点</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">论点的具体案例</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">偏离论点的四种类型</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">如何把握论点</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">双方论点不一致的原因</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">把握论点</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">构建假说</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">何为假说</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">关于假说的三种误解</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">不要让对方过度思考</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">假说不可能凭空出现</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">构建假说时所需的信息和验证假说时所需要信息</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">构筑假说的三个步骤</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">扩大假说范围、提高假说的准确度</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">要点 构建假说</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">实施验证</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">证明假说</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">验证的陷阱</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">验证没有尽头</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">即使验证结果被认为是理所当然也没有关系</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">二八法则(八成理所当然，两成新发现)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">所有确凿的事实根据</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">要点 实施验证</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">提取启发</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">何为启发</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">为何无法提交答案</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">世界没有那么单纯</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">不存在完美的事实根据</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">提取启发应注意三个要点</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">要点 提取启发</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">第4章 会议设定的能力 总结技巧</td>
+<td class="org-left">STORY-4 开始交涉合作事宜</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">毫无反应的众人</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">意料不到的反对</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">咖啡馆内的反省</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">序节 何为会议设计</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">会议无聊的原因</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">无法设计会议的原因</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">设计会议时需注意两个要素</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">要点 何为会议设计</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">确定着陆点</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">定位与输入/输出管理</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">三种视角决定定位</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">避免拖拉式的讨论</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">搞错定位会被要求打回重做</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">管理好会议的输入与输出</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">输入/输出管理的决窍</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">要点 确定着陆点</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">决定着陆形式</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">着陆形式因人而异</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">理解对方风格的三个决窍</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">要点 决定着陆形式</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">第5章 制作商务文本的能力 制作书面资料的步骤</td>
+<td class="org-left">STORY-5 未能通过的方案</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">序节 何为制作商务文本的能力</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">制作商务文本的五个步骤</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">用模板制作商务文本</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">一目了然、不被误解</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">不要违反人类的阅读习惯</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">需要删除三种类型的内容</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">要点 何为制作商务文本的能力</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">文字信息要简单明了</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">三行文字讲清内容</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">说明、事实、启发</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">文字信息的排序方式</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">如何书写文字信息</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">书写文字信息时的三个注意事项</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">凝缩文字信息的手法</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">要点 文字信息应简洁易懂</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">决定着陆形式</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">瞬间传达信息</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">图表的内容与排版</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">图表排版只有四种</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">图表的修饰</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">组装制作图表</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">要点 把文字信息制成图表</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">配置幻灯片</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">制作幻灯片需注意两个要点</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">提高完成度的三个技巧</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">要点 配置幻灯片</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">完成资料包</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">制作资料包时的注意事项</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">要点 完成资料包</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">整合资料包</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">构建资料群</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">5.5.2 要点 整便资料</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">第6章  终章</td>
+<td class="org-left">STORY-6 方案的成功</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">最后的决战</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<div id="outline-container-org6526bc1" class="outline-2">
+<h2 id="org6526bc1"><span class="section-number-2">3</span> 全书摘要和评论</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org8ce18d8" class="outline-3">
+<h3 id="org8ce18d8"><span class="section-number-3">3.1</span> 序言 何为书面沟通的技术</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>沟通能力是商务场合中最重要的能力。</li>
+<li>商务人士基本能力：
+<ul class="org-ul">
+<li>逻辑思考能力，即组织语言的能力</li>
+<li>验证假说能力，即回答疑问的步骤</li>
+<li>会议设计能力，即总结讨论的技巧</li>
+<li>制作商务文本能力，即制作商务文本的步骤</li>
+</ul></li>
+<li>以“提交方案”为切入点的原因：
+<ul class="org-ul">
+<li>如果无法`顺利传达`给对方，就没有任何意义。</li>
+<li>即使演讲口若悬河，若没有`实质内容`，也没有用。</li>
+</ul></li>
+<li>`合理思考`和`妥当表达`能力应兼具，且应保持平衡。</li>
+<li>图0-1列出了本书的定位，解释了在诸多商务能力中，本书所述的内容是基础能
+力。
+<ul class="org-ul">
+<li>这个表格表明，若不具备4种基础能力，妄谈其它能力只是空中楼阁。</li>
+<li>商务能力如此细分，我们需辩明我们的合伙人、员工、合作者都具有哪些能力、
+可能存在的缺陷。</li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-org2b05fbd" class="outline-4">
+<h4 id="org2b05fbd"><span class="section-number-4">3.1.1</span> 本书的结构</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<ul class="org-ul">
+<li>图0-2表达了本书的叙述结构。</li>
+<li>全书分别阐述`如何准确思考`和`如何准确传达`。</li>
+<li>每种能力都细分出论点。</li>
+<li>每章由`故事`、`解说`和`总结(要点)`构成。
+<ul class="org-ul">
+<li>解说：介绍问题及解决方法。</li>
+<li>总结(要点)：概括解说中最重要的内容。</li>
+</ul></li>
+<li>故事
+<ul class="org-ul">
+<li>京都上贺茂制作所：中山先生；</li>
+<li>东京Precena咨询公司：户畸先生。</li>
+<li>中山先生代表上贺茂制作所向Precena咨询公司户畸先生求助如何开展一项新
+业务。</li>
+</ul></li>
+<li>正文
+<ul class="org-ul">
+<li>第1章：介绍提交方案需具备的基本能力；</li>
+<li>第2章：运用逻辑思考能力条理清晰地整理提案内容；</li>
+<li>第3章：运用验证假说能力打消对方的疑问；</li>
+<li>第4章：运用会议设计能力总结讨论的内容；</li>
+<li>第5章：运用制作商务文本能力准备有说服力的文章和图表。</li>
+</ul></li>
+<li>终章
+<ul class="org-ul">
+<li>说明故事结局。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc76b164" class="outline-4">
+<h4 id="orgc76b164"><span class="section-number-4">3.1.2</span> 书面沟通的技术对谁有益</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<ul class="org-ul">
+<li>商务精英
+<ul class="org-ul">
+<li>验证假说能力能够发现对方的需求，适用于与客户交涉、与上司探讨的场合；</li>
+<li>有助于商务精英向下属下达重点清晰的指令。</li>
+<li>会议设计能力可以提高会议的效率。</li>
+</ul></li>
+<li>职场新人
+<ul class="org-ul">
+<li>逻辑思考能力，条理清晰的表达自己想说的内容；</li>
+<li>制作商务文本能力，总结每日工作、传达有效信息。</li>
+</ul></li>
+<li>管理层、经营层
+<ul class="org-ul">
+<li>提供给下属合适的课本。</li>
+<li>逻辑思考能力，让下属意识到自己到底在哪些问题、逻辑上存在哪些漏洞；</li>
+<li>验证假说能力，让不懂上司指令的下属了解论点的内容以及所需要的启发。</li>
+</ul></li>
+<li>求职的学生
+<ul class="org-ul">
+<li>学习正确的工作方式；</li>
+<li>学习需要在求职时展示自己。</li>
+<li>逻辑思考能力，教会学会如何准确表达自己的想法。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcaa1883" class="outline-4">
+<h4 id="orgcaa1883"><span class="section-number-4">3.1.3</span> 方案为何难以通过</h4>
+<div class="outline-text-4" id="text-3-1-3">
+<ul class="org-ul">
+<li>方案是将自己深入思考并认为正确的内容努力传达给他人。
+<ul class="org-ul">
+<li>是否深入思考过？</li>
+<li>是否正确(有假说并努力验证)？</li>
+<li>是否让别人明白了？</li>
+</ul></li>
+<li>经典场景
+<ul class="org-ul">
+<li>不同背景、不同价值观员工幻想着同事的思考模式应与自己相同；</li>
+<li>解说马马虎虎，误以为双方已经互相理解并达成了共识；</li>
+<li>最后关头发现双方意见存在分歧；</li>
+<li>把产生分歧的责任归咎在对方身上。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org5c56c3c" class="outline-3">
+<h3 id="org5c56c3c"><span class="section-number-3">3.2</span> 序章 一个关于开展新业务的故事</h3>
+<div class="outline-text-3" id="text-3-2">
+</div>
+<div id="outline-container-orgad4dd20" class="outline-4">
+<h4 id="orgad4dd20"><span class="section-number-4">3.2.1</span> STORY-0 创办新业务的任命</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<ul class="org-ul">
+<li>业务的背景，包括：公司；人物及关系；业务源起和结果；</li>
+<li>过程及解决是在各章中展开的。</li>
+</ul>
+</div>
+
+<ol class="org-ol">
+<li><a id="org841e3db"></a>前途多艰的课题<br />
+<div class="outline-text-5" id="text-3-2-1-1">
+<ul class="org-ul">
+<li>京都北区贺茂川；</li>
+<li>曾是工作设计技术员的人宫里社长于1978年创建了上贺茂制作所；</li>
+<li>年营业额2000亿日元，主营业务由机能设备业务80%和基它三个小业务(20%)构成；</li>
+<li>中山先生负责刚刚成立的硬件解决方案业务部，即为解决业务问题、满足来务要
+求而构筑的信息系统。该部被寄望成为上贺茂未来的支柱：利用硬件技术优势，
+为顾客提供更为周到的服务，开展附加值较高的业务；</li>
+<li>用图0-3简洁展示上贺茂的基本信息。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org03c53a5"></a>向Precena公司求助<br />
+<div class="outline-text-5" id="text-3-2-1-2">
+<ul class="org-ul">
+<li>东京都港区；</li>
+<li>Precena是面向生产制造商的咨询公司；</li>
+<li>咨询范围：从战略筹划到实际实施。</li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="orgf3f669d"></a>成形的脚本<br />
+<div class="outline-text-5" id="text-3-2-1-3">
+<ul class="org-ul">
+<li>经过6个月反复商讨，经过双方共同努力，明确了发展方向；</li>
+<li>方向：以专业性较强的零售业为主要客户，利用小型终端设备为该零售业的客户
+提供信息系统，生动有趣地展现出卖场的独特魅力。</li>
+<li>图0-4说明了新业力的战略要点，包括：
+<ul class="org-ul">
+<li>业务部使命</li>
+<li>目标客户</li>
+<li>提供价值</li>
+<li>与众不同之处</li>
+</ul></li>
+<li>图0-4的表达将复杂和全面的表述分解成四个方面的关键词，分别简述。这种表
+达方向值得借鉴。</li>
+<li>目标合作方: 塔里克丝公司
+<ul class="org-ul">
+<li>东京都千代田区；</li>
+<li>主营录像带、CD、DVD贩卖和租赁；</li>
+<li>上贺茂不具备零售业的相关知识和技能；</li>
+<li>与知名零售企业合作，以寻找市场需求为目标开展新的业务。</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="org3b292fa"></a>共同业务的启动<br />
+<div class="outline-text-5" id="text-3-2-1-4">
+<ul class="org-ul">
+<li>经过6个月磋商，达成了塔里克丝公司的认同。</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgcb1ce22" class="outline-3">
+<h3 id="orgcb1ce22"><span class="section-number-3">3.3</span> 第1章 提交方案的技术</h3>
+<div class="outline-text-3" id="text-3-3">
+</div>
+<div id="outline-container-orgdbcedae" class="outline-4">
+<h4 id="orgdbcedae"><span class="section-number-4">3.3.1</span> STORY-1 命运般的邂逅</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<ul class="org-ul">
+<li>中山先生的烦恼
+<ul class="org-ul">
+<li>中山先生构思新业务没有头绪，想到了咨询Precena公司；</li>
+<li>结识了平泉、户崎、和川岛先生；</li>
+<li>户崎先生的开场介绍
+<ul class="org-ul">
+<li>说明介绍的内容：公司和自我介绍；设想；合作形式；</li>
+<li>说明预估时间；</li>
+<li>请对方确认内容和时间是否合适。</li>
+</ul></li>
+</ul></li>
+<li>难以理解的提案内容
+<ul class="org-ul">
+<li>在初次见面时，中山先生没有听懂户崎对方案的讲解；</li>
+<li>但中山先生被长达50页的方案所触动；</li>
+</ul></li>
+<li>从怀疑到期待
+<ul class="org-ul">
+<li>通过一周的反复阅读，中山先生决定向社长介绍方案，希望社长同意与
+Precena公司合作。</li>
+</ul></li>
+<li>社长的反对
+<ul class="org-ul">
+<li>努力让通不过的方案通过，这才是方案的价值所在。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org366c712" class="outline-4">
+<h4 id="org366c712"><span class="section-number-4">3.3.2</span> 序节 磨练提交方案的能力</h4>
+<div class="outline-text-4" id="text-3-3-2">
+<ul class="org-ul">
+<li>什么是方案</li>
+<li>正确的方案观</li>
+<li>书面资料的定义和意义</li>
+</ul>
+</div>
+
+<ol class="org-ol">
+<li><a id="org2e5fc1b"></a>每天都在提交方案<br />
+<div class="outline-text-5" id="text-3-3-2-1">
+<ul class="org-ul">
+<li>Precena的户崎向上贺茂的中山提出一份关于”硬件解决方案业务的方向
+性”的方案；</li>
+<li>中山向宫里社长提议，希望"购买Precena公司的咨询服务"；</li>
+<li>销售人员提供企划方案，证明公司的产品值得购买；</li>
+<li>技术人员提交开发某项技术的方案，强调开发必要性；</li>
+<li>提案能力是每个人都必须具备的基本能力。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orged82fdb"></a>提交方案就要努力让方案通过<br />
+<div class="outline-text-5" id="text-3-3-2-2">
+<ul class="org-ul">
+<li>如果把方案通过视为理所当然，一旦未能通过，就会把失败归咎于对方或
+环境。</li>
+<li>之所以抱怨，是因为从没考虑过被反对的可能性（想想看，之前列举过没
+有被通过的原因吗）。</li>
+<li>缺乏提交方案的能力，导致报怨。</li>
+<li>方案，提交出来就是为了让它通过。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgb46c56d"></a>书面资料<br />
+<div class="outline-text-5" id="text-3-3-2-3">
+<ul class="org-ul">
+<li>方案的类型包括两种，口头方案和书面方案。本书主要就书面方案进行具
+体说明。
+<ul class="org-ul">
+<li>这种表达方式就体现了横向逻辑，避免了读者的质疑。</li>
+</ul></li>
+<li>更举了书面资料的必要性
+<ul class="org-ul">
+<li>决策后回顾</li>
+<li>向所有成员做出相关说明</li>
+</ul></li>
+<li>图1-1两类方案的不同点
+<ul class="org-ul">
+<li>这里的口头方案是指演讲稿</li>
+<li>看来我们的方案本来就应该具备两种形式</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="org552e957"></a>制作书面资料的过程有利于理清自己的思路<br />
+<div class="outline-text-5" id="text-3-3-2-4">
+<ul class="org-ul">
+<li>那些听起来让人觉得容易理解或已经理解、但却难以整理成书面资料的提
+案，往往存在矛盾或含糊的地方。</li>
+<li>总结书面资料，可以让自己的思路更加清晰，及时解决其中存在的矛盾，
+帮我们正确看待整个方案。这是一个反复思考、锻炼大脑的过程。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgfc4b649"></a>书面资料可以让演讲者言之有物<br />
+<div class="outline-text-5" id="text-3-3-2-5">
+<ul class="org-ul">
+<li>不善表达是因为原来就不知道应该讲什么。</li>
+<li>没搞清楚到底打算向他人传达什么内容。</li>
+<li>虽然有人无需事先准备文稿就能侃侃而谈，但是在大多情况下，他们不是
+在完善阐述，而是在完美搪塞。</li>
+<li>如果没能理清思路，仅仅简单列个提纲，那么这个提纲不过是偷工减料和
+随口一说罢了。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgdeba07d"></a>如何提高书面沟通能力<br />
+<div class="outline-text-5" id="text-3-3-2-6">
+<ul class="org-ul">
+<li>书面沟通能力
+<ul class="org-ul">
+<li>能对事物进行合理思考</li>
+<li>向对方进行妥当表达</li>
+<li>图1-2 表明了思考能力和表达能力构建的四个象限
+<ul class="org-ul">
+<li>表达清晰，但思考不充分：中山向宫里推荐Precena公司</li>
+<li>未向妥当表达：户崎向中山首次介绍方案</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="org11cdbcd"></a>合理思考所需的必要条件<br />
+<div class="outline-text-5" id="text-3-3-2-7">
+<ul class="org-ul">
+<li>两个技能和5个研讨步骤。</li>
+<li>两个技能：第2章 逻辑思考能力，即组织语言的能力
+<ul class="org-ul">
+<li>横向逻辑</li>
+<li>纵向逻辑</li>
+</ul></li>
+<li>5个研讨步骤：第3章 假说验证能力
+<ul class="org-ul">
+<li>目的：谈啥，对话的目的，便于得到想要的答案；</li>
+<li>论点：对方到底对哪些论点有疑虑；论点不是观点；</li>
+<li>假说：提前设想对方有哪些疑问，并想出答案，使谈话有效率；</li>
+<li>验证：当有分歧时，应向对方提供客观依据；</li>
+<li>启发：根据验证结果找到行动方向。</li>
+</ul></li>
+<li>以上成为合理思考的必要条件，这意味
+<ul class="org-ul">
+<li>没有组织好语言，无法合理思考；</li>
+<li>没有遵循5个步骤研讨，无法合理思考。</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="org089ecb7"></a>妥当表达所需的必要条件<br />
+<div class="outline-text-5" id="text-3-3-2-8">
+<ul class="org-ul">
+<li>两个技能和5个研讨步骤。</li>
+<li>两个技能：第4章 会议设计能力，即讨论总结能力
+<ul class="org-ul">
+<li>讨论目的</li>
+<li>讨论形式</li>
+</ul></li>
+<li>5个步骤：第5章 制作商务文本的能力
+<ul class="org-ul">
+<li>文字信息：正确语言把想传达的写成文章；</li>
+<li>图表：一目了然，展示表达；</li>
+<li>幻灯片：多个图表和段落集中在一张幻灯片上；</li>
+<li>资料包：多张幻灯片组成一个资料包，像一个故事一样；</li>
+<li>材料：多个资料包组合起来，总结整理成最合适会议的商务文本。</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgc74530f"></a>要点 书面沟通的技术<br />
+<div class="outline-text-5" id="text-3-3-2-9">
+<ul class="org-ul">
+<li>所有人都会面临提交方案的场合。如果缺乏书面沟通能力，你会损失很多。</li>
+<li>如何不努力准备方案，你的方案就很有可能不被认可。</li>
+<li>不善表达是因为自己原来就不知道应该讲些什么。</li>
+<li>仔细思考，认真概括，力求制作出简单明了的答案。</li>
+<li>书面沟通能力包括：合理思考及妥当表达。</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+<div id="outline-container-org7b64ee7" class="outline-3">
+<h3 id="org7b64ee7"><span class="section-number-3">3.4</span> 第2章 逻辑思考能力，组织语言的能力</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>对题目的理解
+
+<ul class="org-ul">
+<li>逻辑思考是否到位、全面，外现于语言的组织。</li>
+<li>若语言组织逻辑性强、滴水不露，则说明逻辑思考能力很强。</li>
+<li>说得清、说得全，就是想得透，想得全。</li>
+</ul></li>
+</ul>
+</div>
+
+
+<div id="outline-container-orgd010db0" class="outline-4">
+<h4 id="orgd010db0"><span class="section-number-4">3.4.1</span> STORY-2 中间报告的走向</h4>
+<div class="outline-text-4" id="text-3-4-1">
+<ul class="org-ul">
+<li>不断高涨的紧张感
+<ul class="org-ul">
+<li>通过中间报告会户崎向上贺茂社长以外的管理层汇报硬件解决方案业务；</li>
+<li>会议规格很高，出乎户崎的意料；</li>
+<li>会议预定3个小时，户崎介绍占用了2个小时；</li>
+</ul></li>
+
+<li>最初的疑问
+<ul class="org-ul">
+<li>机能设备业务部技术部长佐藤：应以为客户节约成本为方向，为什么偏要
+朝增加销量这个方向努力？
+<ul class="org-ul">
+<li>项目组曾经讨论过这个问题，但没有写进材料中。</li>
+<li>两个原因：
+<ol class="org-ol">
+<li>成本降低有限度；</li>
+<li>贵公司在后台系统方面很难发挥自身优势。（而不是：贵公司在这 方面没有优势。）</li>
+</ol></li>
+<li>听过解释后，佐藤：原来如此&#x2026;您要是一开始就介绍这两个原因的话，
+我就不会这么困惑了。</li>
+</ul></li>
+<li>机能设备业务部销售部长山本：请问具体瞄准了零售业中的哪个领域？
+<ul class="org-ul">
+<li>答：我们以专业性较高、发展前景较好的企业。</li>
+<li>问：先不讨论先进性、成长态势这个话题。行业不同则顾客需求也不同。
+请问瞄准的是哪个行业？（这次问的不是领域，而回到了行业。）</li>
+<li>户崎端起茶杯抿了一口&#x2026;（面对第一次回答被驳回后，借由其它动作 暂停对话，思考）</li>
+<li>户崎发现：对方的角度是销售，而不是从管理、业务角度提问。（反思
+到谈话角度，即提出的出发点。）</li>
+</ul></li>
+</ul></li>
+
+<li>报告会结束之后
+<ul class="org-ul">
+<li>上贺茂管理层提的问题尖锐；</li>
+<li>户崎先生被中山评价：没想到你却能够控制住全局；</li>
+<li>户崎回应：要提交构建好逻辑，争取让所有人都能听懂解说。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3bfb37d" class="outline-4">
+<h4 id="org3bfb37d"><span class="section-number-4">3.4.2</span> 序节 何为逻辑</h4>
+<div class="outline-text-4" id="text-3-4-2">
+</div>
+<ol class="org-ol">
+<li><a id="org6e692de"></a>逻辑的必要性<br />
+<div class="outline-text-5" id="text-3-4-2-1">
+<ul class="org-ul">
+<li>为什么需要逻辑：这是为了让“任何人”都能听懂并接受我们的方案。
+<ul class="org-ul">
+<li>对方可能因第一次见面、或因背景与我们大不相同，而持相反意见。</li>
+<li>尤其在商务场合，不同企业或部门在价值及思考方式存在的差异超乎我
+们的想象。</li>
+</ul></li>
+<li>要想让自己的方案得到认可，就必须把自己想说的话按照逻辑组织起来。</li>
+<li>不要奢望所谓的不言自明或迟早会明白。如果我们不努力准备，就可能无
+法获得对方的理解。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org179b6b0"></a>逻辑具体理指什么<br />
+<div class="outline-text-5" id="text-3-4-2-2">
+<ul class="org-ul">
+<li>逻辑是指把语言合理地组织起来。(平常说：这个人讲话没有逻辑。就是指
+没有把语言合理地组织起来。)</li>
+<li>将词汇及概念组织到一起，只有纵、横两种组织方法。
+<ul class="org-ul">
+<li>纵向逻辑：即因果关系。</li>
+<li>横向逻辑：总分关系，没有遗漏和重复，即MECE分析法。</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="org11b37f0"></a>对方不理解的情况包括两种<br />
+<div class="outline-text-5" id="text-3-4-2-3">
+<ul class="org-ul">
+<li>不理解，是因为我们的语言中的纵向逻辑、横向逻辑在对方脑中并未组织
+成形。</li>
+<li>纵向逻辑未建立，则反应：真是这样吗？</li>
+<li>横向逻辑未建立，则反应：仅仅如此吗？</li>
+<li>回顾了故事中三位部长的质疑，皆可归入以上两类。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org4d8ed9c"></a>为何对方会问：真是这样的吗<br />
+<div class="outline-text-5" id="text-3-4-2-4">
+<ul class="org-ul">
+<li>逻辑关系在对方看来断链，就会有此一问。</li>
+<li>不同的人，断链点不一样。要视情况而决定在哪里连接。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orga23c761"></a>纵向逻辑的理想状态<br />
+<div class="outline-text-5" id="text-3-4-2-5">
+<ul class="org-ul">
+<li>把重点部分解释清楚即可。</li>
+<li>针对对方的提问能够详细做出解释。</li>
+<li>只有在对方提问时才需要做出详细的解释。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org7f89466"></a>为何对方会问：只是这样吗<br />
+<div class="outline-text-5" id="text-3-4-2-6">
+<ul class="org-ul">
+<li>出现了遗漏和重复</li>
+<li>高桥业务部长指出看视频和在电影院看银幕感受截然不同。</li>
+<li>重复现象容易发现，而遗漏现象则比较难发现。</li>
+<li>所举的例子：销量可以保证，且前来交涉的是重要客户，所有应该开发。
+这个逻辑忽略了收益及研发技术概念。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org2c7fb06"></a>横向逻辑的理想状态<br />
+<div class="outline-text-5" id="text-3-4-2-7">
+<ul class="org-ul">
+<li>覆盖范围广、分类细致。</li>
+<li>图2-4展示了不同的理解程度：视野和细致两个维度。</li>
+<li>对3类人的分析可以帮助我们区分思考问题的人是哪一种状态。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgcdf3ceb"></a>逻辑合理与否由对方判断<br />
+<div class="outline-text-5" id="text-3-4-2-8">
+<ul class="org-ul">
+<li>你的逻辑是否合理，是由对方来进行判断。</li>
+<li>假如你认为自己很有逻辑，无法和不懂逻辑的人沟通，实际上意味着你自
+己就缺乏逻辑。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org55c0d9a"></a>要点 何为逻辑（略）<br /></li>
+</ol>
+</div>
+
+<div id="outline-container-org74a02d2" class="outline-4">
+<h4 id="org74a02d2"><span class="section-number-4">3.4.3</span> 第1节 建立纵向逻辑</h4>
+<div class="outline-text-4" id="text-3-4-3">
+</div>
+<ol class="org-ol">
+<li><a id="org5a2fd25"></a>纵向逻辑薄弱的三个原因<br />
+<div class="outline-text-5" id="text-3-4-3-1">
+<ul class="org-ul">
+<li>前提条件不同
+<ul class="org-ul">
+<li>图2-6描绘了说话者和听话者的脑海示意。</li>
+<li>听者并不知道一些隐性前提。</li>
+<li>解决办法：多听对方讲话，发现缺少什么样的前提。</li>
+</ul></li>
+
+<li>把不同性质的东西混为一谈
+<ul class="org-ul">
+<li>图2-7说明了将一个大前提作为原因，掺杂了很多不同性质的东西。</li>
+<li>举例：山本销售部长指出零售业不能一根而论。而户崎讲的零售业过于
+笼统。</li>
+<li>应该学会反省自己的言论，看看自己是否把不同东西混为一谈。特别是
+当我们谈及并不熟悉的领域时。重要的是，我们应该在脑子里多问问自
+己：是否有必要把这件事细致分类，再进行讨论？</li>
+</ul></li>
+
+<li>偶然的必然化
+<ul class="org-ul">
+<li>图2-8展示了听话者感受到的是过于跳跃的逻辑。</li>
+<li>佐藤技术部长质疑：实际上能否顺利实现合作。其实就是在质疑是否是
+偶然因果。</li>
+<li>解决办法：按照时间顺序想象最坏的情形，就能够轻易发生阻断因果之
+间联系。</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="org24d915e"></a>如何消除导致纵向逻辑薄弱的因素<br />
+<div class="outline-text-5" id="text-3-4-3-2">
+<ul class="org-ul">
+<li>丰富理由</li>
+<li>提炼理由</li>
+<li>延展理由</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org81a3dca"></a>要点 建立纵向逻辑(略)<br /></li>
+</ol>
+</div>
+
+<div id="outline-container-org41e82a9" class="outline-4">
+<h4 id="org41e82a9"><span class="section-number-4">3.4.4</span> 第2节 建立横向逻辑</h4>
+<div class="outline-text-4" id="text-3-4-4">
+</div>
+<ol class="org-ol">
+<li><a id="org2e43133"></a>横向逻辑的组合<br />
+<div class="outline-text-5" id="text-3-4-4-1">
+<ul class="org-ul">
+<li>合理的横向逻辑是指没有遗漏和重复。</li>
+<li>本书就为何在现场、实践中难以实现MECE状态进行说明，即挖掘对方为何
+质仅仅如此的原因。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org0392698"></a>为何无法实现MECE状态<br />
+<div class="outline-text-5" id="text-3-4-4-2">
+<ul class="org-ul">
+<li>用开拓新市场、找工作、年度工作目标分别说明了遗漏、重复。</li>
+<li>然而年度工作目标的案例更有探讨空间，体现出：层次感问题。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgdb8f430"></a>体会语言中的层次感<br />
+<div class="outline-text-5" id="text-3-4-4-3">
+<ul class="org-ul">
+<li>语言中的扭曲状态：语言不在同一平面。</li>
+<li>在检查遗漏和重复之前，表述中已经混杂了相去其远的概念——最为常见的
+非MECE状态。</li>
+<li>把不同角度概念归拢到同一平面，然后才能开始讨论遗漏和重复。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgaec51c0"></a>把不同角度的概念归拢到同一平面<br />
+<div class="outline-text-5" id="text-3-4-4-4">
+<ul class="org-ul">
+<li>山本销售部长对户崎的质疑体现出角度不一致。</li>
+<li>为什么说/听话者语言层次不在同一角度?
+<ul class="org-ul">
+<li>立场不同</li>
+<li>切入点不同</li>
+</ul></li>
+<li>解决方法
+<ul class="org-ul">
+<li>让说/听话者切入点一致（户崎：创建业务；山本：业务已进入正轨）</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="orge63a679"></a>如何实现MECE状态<br />
+<div class="outline-text-5" id="text-3-4-4-5">
+<ul class="org-ul">
+<li>前提：话题角度在同一平面</li>
+<li>详细解说
+<ol class="org-ol">
+<li>使用架构
+<ul class="org-ul">
+<li>列举架构: 5P营销理论、3C战略三角模型、波特五力模型、 麦肯锡
+7S模型、理特咨询公司的SRPO模型和SPCO模型。AIDS原理描绘了消费
+者决定购买时的心理过，PDCA循环揭示了持续改善产品质量的过程。</li>
+<li>要将模型用到恰当的场景中，才能有利于MECE分析。</li>
+<li>也要分析对方在使用什么模型或站在什么场景下在思考。这就要求要
+尽可能丰富的模型知识。</li>
+</ul></li>
+<li>避免遗漏
+<ul class="org-ul">
+<li>6维度模型</li>
+<li>似乎可以统一所有模型，但没有深入展开</li>
+</ul></li>
+<li>消除重复
+<ul class="org-ul">
+<li>采用MECE模型</li>
+<li>图2-14图稍后细琢磨</li>
+<li>如何修改应聘理由</li>
+</ul></li>
+</ol></li>
+</ul>
+</div>
+</li>
+
+<li><a id="org4034579"></a>完成横向逻辑<br />
+<div class="outline-text-5" id="text-3-4-4-6">
+<ul class="org-ul">
+<li>从6个维度观察整体事项，查看是否完整；</li>
+<li>由MECE模型检查重复</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org9fd0ea3"></a>最终形成金字塔结构<br />
+<div class="outline-text-5" id="text-3-4-4-7">
+<ul class="org-ul">
+<li>横向逻辑展开</li>
+<li>逐一深入纵向逻辑</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgdfb5ddd"></a>要点 建立横向逻辑<br /></li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org0fc4801" class="outline-3">
+<h3 id="org0fc4801"><span class="section-number-3">3.5</span> 第3章 验证假说能力 回答疑问的步骤</h3>
+<div class="outline-text-3" id="text-3-5">
+</div>
+<div id="outline-container-org52e94c1" class="outline-4">
+<h4 id="org52e94c1"><span class="section-number-4">3.5.1</span> STORY-3 最终报告的失策</h4>
+<div class="outline-text-4" id="text-3-5-1">
+<ul class="org-ul">
+<li>暴风雨前的宁静
+<ul class="org-ul">
+<li>在中间报告会后2个月，户崎在平泉、川岛的陪伴下会见了宫里社长。汇
+报硬件解决方案业务进展。</li>
+<li>户崎向宫里社长提交了最终方案。</li>
+</ul></li>
+
+<li>户畸的提案要点
+<ul class="org-ul">
+<li>中间报告会的回顾（里面没有出现塔里克丝的信息）</li>
+<li>提案为应用于塔里克丝公司的方案</li>
+</ul></li>
+
+<li>巨大的误会
+<ul class="org-ul">
+<li>社长的提问：似乎你们已经决定和塔里克丝公司展开合作了。目前已经和
+对方接触了吗？</li>
+<li>户崎的回答
+<ol class="org-ol">
+<li>贵公司不宜从零开始一切自己摸索</li>
+<li>说明了塔里克丝的状态，也预计了企业文化相近。</li>
+</ol></li>
+</ul></li>
+
+<li>留下的作业  
+<ul class="org-ul">
+<li>宫里社长对与塔里克丝公司合作这个大提前提出了质疑，需要解释。</li>
+<li>户崎给出的是口头回答</li>
+<li>商务场合中，应对对方提出的问题，做出有说服务力的回答。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orga3c4f74" class="outline-4">
+<h4 id="orga3c4f74"><span class="section-number-4">3.5.2</span> 序节 何为验证假说能力</h4>
+<div class="outline-text-4" id="text-3-5-2">
+</div>
+<ol class="org-ol">
+<li><a id="org4fa7b51"></a>逻辑思考的陷阱<br />
+<div class="outline-text-5" id="text-3-5-2-1">
+<ul class="org-ul">
+<li>有时，即使我们做出了有逻辑的说明，对方仍然无法接受。(如社长未能接
+受户崎的解释)</li>
+<li>倘若一味罗列对方不肯接受的理由，结果只会是为了逻辑而制造逻辑。</li>
+<li>如果以为仅靠逻辑思考这一基本能力就能解决所有问题，那就大错特错。</li>
+<li>倘若没有回答对方的疑问，即使再努力解释对方没问过的问题，对方最终
+还是不会认同。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgb80c4c2"></a>地毯式轰炸般提问和无凭无据的断言<br />
+<div class="outline-text-5" id="text-3-5-2-2">
+<ul class="org-ul">
+<li>回答应经历两个步骤
+<ul class="org-ul">
+<li>知道对方的疑问：探知对方的疑问，即“提出论点”；</li>
+<li>回答对方的疑问：针对对方可能提出的疑问，提前准备好客观的答案，
+即 “验证假说”。</li>
+</ul></li>
+<li>若没假说验证无法完成，则：
+<ul class="org-ul">
+<li>遭到对方地毯式轰炸般的提问：</li>
+<li>被对方断定为无凭无据。</li>
+</ul></li>
+<li>图3-1说明了缺少论点或验证假说的后果。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org6ea4584"></a>假说验证的五个步骤<br />
+<div class="outline-text-5" id="text-3-5-2-3">
+<ul class="org-ul">
+<li>目的：对方的最终需求，对方以何种立场倾听自己讲话。</li>
+<li>论点：对方想知道的内容。</li>
+<li>假说：假设的答案。</li>
+<li>验证：证据，避免无止境的争论。</li>
+<li>启发：回答对方疑问或对对方有所帮助。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org6212ccf"></a>要点 假说验证能力（略）<br /></li>
+</ol>
+</div>
+
+
+
+<div id="outline-container-org041e0ee" class="outline-4">
+<h4 id="org041e0ee"><span class="section-number-4">3.5.3</span> 第1节 理解目的</h4>
+<div class="outline-text-4" id="text-3-5-3">
+</div>
+<ol class="org-ol">
+<li><a id="org026cd97"></a>讨论的立场和对方的要求<br />
+<div class="outline-text-5" id="text-3-5-3-1">
+<ul class="org-ul">
+<li>讨论的立场：本方进行这次讨论是为了什么？</li>
+<li>对方的要求：对方讨论的目的</li>
+<li>本方只想说(不想听)，对方不理解：牢骚说教</li>
+<li>本方要求对方做决定，对方不理解：主张被对方责难</li>
+<li>本方只想说，对方理解：讲课指导</li>
+<li>本方要求对方做决定，对方理解：方案说服</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org19c22c6"></a>讨论的立场包括两种<br />
+<div class="outline-text-5" id="text-3-5-3-2">
+<ul class="org-ul">
+<li>要求对方做判断</li>
+<li>只想让对方倾听(我们对员工的谈话明确是不是这一种)</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgb23b5db"></a>逼迫和引导<br />
+<div class="outline-text-5" id="text-3-5-3-3">
+<ul class="org-ul">
+<li>在咨询公司不存在引导沟通，但若灵活运用，可能会产生极好的效果。</li>
+<li>略过引导型的论述。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org84d5401"></a>要求对方做判断<br />
+<div class="outline-text-5" id="text-3-5-3-4">
+<ul class="org-ul">
+<li>向上司汇报的场景可能会被我们经常遇到。说话者可能留下判断的空间给
+我们。是否可以明确问对方是否需要我们做出判断。</li>
+<li>在商务活动中，我们应当谨记，自己的目的是让对方判断，并在此基础上
+做出有逻辑地组织语言。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org72de5da"></a>总结要更具体<br />
+<div class="outline-text-5" id="text-3-5-3-5">
+<ul class="org-ul">
+<li>总结不具体，就很难继续展开深入交流。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgf406d1d"></a>感性思维不可或缺<br />
+<div class="outline-text-5" id="text-3-5-3-6">
+<ul class="org-ul">
+<li>从对方表情、当时氛围、过去经历、对话过程等角度探知对方的心理。</li>
+<li>有逻辑地讲话与让对方接受不能混为一谈。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org25f325a"></a>结果是由对方决定<br />
+<div class="outline-text-5" id="text-3-5-3-7">
+<ul class="org-ul">
+<li>学会倾听对方的声音。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org115539a"></a>要点 理解目的(略)<br /></li>
+</ol>
+</div>
+
+
+
+<div id="outline-container-org98488ae" class="outline-4">
+<h4 id="org98488ae"><span class="section-number-4">3.5.4</span> 第2节 把握论点</h4>
+<div class="outline-text-4" id="text-3-5-4">
+</div>
+<ol class="org-ol">
+<li><a id="orga803f91"></a>何为论点<br />
+<div class="outline-text-5" id="text-3-5-4-1">
+<ul class="org-ul">
+<li>要求对方做出判断的项目(item)就是论点，也就是即讨论的要点和重要部分。</li>
+<li>此后，还应调查“对方对哪些问题的答案感到不确定”。</li>
+<li>总之，论点就是影响到对方最终判断结果的判断项目。</li>
+<li>论点即是对方想知道的问题点。(更准确的说：是对方的问题点。)</li>
+<li>论点可以以提问的方式表述，这样就会引出假说，即针对问题的猜测性回
+答。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgb1249aa"></a>论点的具体案例<br />
+<div class="outline-text-5" id="text-3-5-4-2">
+<ul class="org-ul">
+<li>案例：房屋租赁业务，作为销售人员，面对客人的谈话论点。</li>
+<li>基于对方的需求，列出可能的论点。通过与对方交谈，探知对方感兴趣并
+即做出判断的项目。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org98fd251"></a>偏离论点的四种类型<br />
+<div class="outline-text-5" id="text-3-5-4-3">
+<ul class="org-ul">
+<li>没能弄清对方的立场。(即谈话的角度，多数时候，我们要对方做出判断
+的立场来讨论的。)</li>
+<li>错误理解对方的立场。(对方需要A，我们再在谈B。)</li>
+<li>未能找出需要对方做出判断的具体项目。</li>
+<li>重复对方早已知晓的答案。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org222e015"></a>如何把握论点<br />
+<div class="outline-text-5" id="text-3-5-4-4">
+<ul class="org-ul">
+<li>对照故事，说明以上四种偏离论点类型。
+<ul class="org-ul">
+<li>户崎在把握讨论的立场时，只汇报了计划，没要求宫里社长对某些具体
+事项做出判断。(欠缺感性思维)</li>
+<li>户崎在理解对方的要求时，宫里的重点是“是否有必要和其它公司合作”，
+然而户一直在介绍“具体的业务内容”。二者存在决定性的偏差。(欠缺
+感性思维)</li>
+<li>户崎没有考虑过“顺利合作的可能性有多大”。图3-6展示了户崎的逻辑
+思维漏洞。(缺乏逻辑思考)</li>
+<li>户崎所述塔里克丝公司的经营情况宫里社长早就知道。(欠缺感性思维)</li>
+</ul></li>
+<li>没有感性思维，就很难听懂对方的话。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org6247dd0"></a>双方论点不一致的原因<br />
+<div class="outline-text-5" id="text-3-5-4-5">
+<ul class="org-ul">
+<li>图3-7展示了检查上述4个原因的步骤和方法。</li>
+<li>会议开始前，言明哪些事项需要判断。</li>
+<li>做好事前工作，通过个别确认等方式提前把握对方的要求。</li>
+<li>调查参会者的立场和角度，设想可能出现的情形，力求统一语言的层次感。</li>
+<li>准确定义“整体”，在统一印象的基础上，明确所要探讨的框架。</li>
+<li>在框架中确认参会者的意见基于哪些方面，清除遗漏和重复。</li>
+<li>提前确定参会者对相关知识了解到何种程度。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org3115489"></a>要点 把握论点(略)<br /></li>
+</ol>
+</div>
+
+
+<div id="outline-container-org0711544" class="outline-4">
+<h4 id="org0711544"><span class="section-number-4">3.5.5</span> 第3节 构建假说</h4>
+<div class="outline-text-4" id="text-3-5-5">
+</div>
+<ol class="org-ol">
+<li><a id="org2ce8661"></a>何为假说<br />
+<div class="outline-text-5" id="text-3-5-5-1">
+<ul class="org-ul">
+<li>明确了对方的论点后，就涉及到如何回答对方的问题点。本节即谈回答对
+方问题的方式。</li>
+<li>所谓假说，是指针对论点做出的猜测性回答。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orga55fe89"></a>关于假说的三种误解<br />
+<div class="outline-text-5" id="text-3-5-5-2">
+<ul class="org-ul">
+<li>没有论点就没有假说
+<ul class="org-ul">
+<li>假说是归根结底是指针对论点做出的假设性回答。</li>
+</ul></li>
+<li>假说不是没有根据的瞎猜
+<ul class="org-ul">
+<li>根据自己的感觉、经验、常识等找出相关的根据。</li>
+</ul></li>
+<li>假说不是答案
+<ul class="org-ul">
+<li>假说和答案之间，差一个客观根据。</li>
+<li>只有找到了客观依据，假说才能被称为答案。</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="org079f7fb"></a>为何需要假说<br />
+<div class="outline-text-5" id="text-3-5-5-3">
+<ul class="org-ul">
+<li>不能立刻回答论点时，有两个应对方法
+<ol class="org-ol">
+<li>把所有能以的选项都提供给方，让对方做出选择。(地毯式轰炸型)</li>
+<li>把自己猜想的答案提供给对方，让对方做出选择。(假说验证型)</li>
+</ol></li>
+
+<li>假说是为了提高讨论效率、避免做无用功。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org3ed84be"></a>不要让对方过度思考<br />
+<div class="outline-text-5" id="text-3-5-5-4">
+<ul class="org-ul">
+<li>对上司和顾客讲话时负责费脑思考的人应该是我们，因此我们有必要采取
+假说验证型思考。</li>
+<li>图3-9形象地说明了有无假说的沟通效果。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orga4c0baf"></a>假说不可能凭空出现<br />
+<div class="outline-text-5" id="text-3-5-5-5">
+<ul class="org-ul">
+<li>根据过去积累的庞大信息做出判断</li>
+<li>偶然的信息促使他们找到可能性最大的答案</li>
+<li>尽可能收集附近信息并加以推测</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orga1b65a6"></a>构建假说时所需的信息和验证假说时所需的信息<br />
+<div class="outline-text-5" id="text-3-5-5-6">
+<ul class="org-ul">
+<li>构建假说和验证假说反复循环，不断缩小范围，命中对方的疑问。</li>
+<li>构建假说所需要信息：源于日常收集、此类信息相对容易入手、且范围较
+广、不够深入。</li>
+<li>验证假说所需要信息：专门收集、相对费劲、范围较窄，比较深入。</li>
+<li>常范错误说明：我们应正确认识到收集信息的目的到底是什么。
+<ul class="org-ul">
+<li>明明没有构建假说，却轻率地开展了具体且深入的调查</li>
+<li>明暖对方要求具体且精准的答案，却只随便提供了一个看似精准的回答。</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="org44b6b52"></a>构筑假说的三个步骤<br />
+<div class="outline-text-5" id="text-3-5-5-7">
+<ul class="org-ul">
+<li>牢记论点
+<ul class="org-ul">
+<li>怀着寻找答案及启发的心情进行探索，这点尤为重要。</li>
+<li>只要你做到在阅读信息时牢记论点，就会迅速发现可能性较高的答案。</li>
+</ul></li>
+<li>时刻想着答案是什么
+<ul class="org-ul">
+<li>该阶段易采用非限定式提问，扩大视野去思考答案是什么。</li>
+</ul></li>
+<li>广泛阅览大量信息</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org24cee21"></a>扩大假说范围，提高假说的准确度<br />
+<div class="outline-text-5" id="text-3-5-5-8">
+<ul class="org-ul">
+<li>假说验证能力的应用难点在于不断构建准确度较高的假说。</li>
+<li>在成功构建一个假说后，要提高假说的准确度，增加假说数量并不容易。</li>
+<li>用横向逻辑，考虑与当前假说并行的其它假说。</li>
+<li>用纵向逻辑，细分假说的推理。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org4ea0c69"></a>要点 构建假说(略)<br /></li>
+</ol>
+</div>
+
+
+<div id="outline-container-org414862f" class="outline-4">
+<h4 id="org414862f"><span class="section-number-4">3.5.6</span> 第4节 实施验证</h4>
+<div class="outline-text-4" id="text-3-5-6">
+</div>
+<ol class="org-ol">
+<li><a id="orgd76e814"></a>假说证明<br />
+<div class="outline-text-5" id="text-3-5-6-1">
+<ul class="org-ul">
+<li>正确的逻辑：方程式正确</li>
+<li>坚实的数据：方程式中的数字是正确的</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org80e7228"></a>验证的陷阱<br />
+<div class="outline-text-5" id="text-3-5-6-2">
+<ul class="org-ul">
+<li>一味收集信息
+<ul class="org-ul">
+<li>没有论点的假说</li>
+<li>没有假说的验证</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="org83a7526"></a>验证没有尽头<br />
+<div class="outline-text-5" id="text-3-5-6-3">
+<ul class="org-ul">
+<li>只有当对方表示赞成，验证才宣告结束。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org34d5fcc"></a>即使验证结果被认为是理所当然也没有关系<br />
+<div class="outline-text-5" id="text-3-5-6-4">
+<ul class="org-ul">
+<li>验证只是给假说提供了证据，其实结论已经在假说里了。</li>
+<li>若被认为理所当然也是没有办法的事情。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org6beeeff"></a>二八法则（八成理所当然，二成新发现）<br />
+<div class="outline-text-5" id="text-3-5-6-5">
+<ul class="org-ul">
+<li>若80 %证明了理所当然，20 %成了新的发现，就说明验证非常成功。</li>
+<li>证实理所当然的答案看似毫无意义，实际上却能推动对话的进展。</li>
+<li>验证假说时，会收集到许多新信息，开始思考新的论点，进而构建新的假
+说。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org64ff1e3"></a>采用确凿的事实根据<br />
+<div class="outline-text-5" id="text-3-5-6-6">
+<ul class="org-ul">
+<li>定量息信 &gt; 定性信息</li>
+<li>一手信息 &gt; 二手信息</li>
+<li>第三方信息 &gt; 当事者信息</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org04001e2"></a>要点 实施验证(略)<br /></li>
+</ol>
+</div>
+
+
+<div id="outline-container-org25fb176" class="outline-4">
+<h4 id="org25fb176"><span class="section-number-4">3.5.7</span> 第5节 提取启发</h4>
+<div class="outline-text-4" id="text-3-5-7">
+</div>
+<ol class="org-ol">
+<li><a id="org236a39b"></a>何为启发<br />
+<div class="outline-text-5" id="text-3-5-7-1">
+<ul class="org-ul">
+<li>有益于把握论点核心的信息</li>
+<li>图3-13展示了答案、启发以及随意主张之间的差别</li>
+<li>明明没有把握好目的和论点，却强调说这是启发或意义，其实不过是自以为
+是地认为自己的答案有用罢了。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org79593b6"></a>为何无法提交答案<br />
+<div class="outline-text-5" id="text-3-5-7-2">
+<ul class="org-ul">
+<li>无法回答的原因在于：逻辑不够合理，抑或事实根据不够充足。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgdac3a52"></a>世界没有那么单纯<br />
+<div class="outline-text-5" id="text-3-5-7-3">
+<ul class="org-ul">
+<li>很多时候，找了一些事实作为根据，仍然不足以达成结论，但可以作为启
+发。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgdc1c79e"></a>不存在完美的事实根据<br />
+<div class="outline-text-5" id="text-3-5-7-4">
+<ul class="org-ul">
+<li>尽管不能因为没有完美的事实根据，就轻言放弃，应把注意力集中到提取
+启发上。</li>
+<li>可以把论点分解。要做到提取启发，只需解决其中一部分问题即可。</li>
+<li>图3-15分析了到底哪些论点被验证了。
+<ul class="org-ul">
+<li>这个模型里面有大小环境的分析。</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgdf18b7f"></a>提取启发应注意的三个要点<br />
+<div class="outline-text-5" id="text-3-5-7-5">
+<ul class="org-ul">
+<li>提取启发，既没有100 %肯定或否定论点，又没有正面验证对方提出的假说。</li>
+<li>虽然无法果断地做出决定，而仅能做出提取启发的程度，但是，做到这个
+程就意味着我们可以接着展开讨论。</li>
+<li>三个要点
+<ul class="org-ul">
+<li>正确理解目的和论点
+<ul class="org-ul">
+<li>在调查时容易因为进行不下去而无法提交方案。其实只要明确论点，
+即调查没有准确结果，只要形成启发也是可以的。</li>
+<li>上司在下达工作指令时应让下属充分理解工作的目的及论点，下属在
+接上司指令时应积极把握工作的目的及论点，这是提取启发的重要前
+提。</li>
+</ul></li>
+<li>把握论点的核心
+<ul class="org-ul">
+<li>针对对方的特点，分析论点的核心，即最迫切需要的信息。</li>
+</ul></li>
+<li>不要设计无法验证的方案
+<ul class="org-ul">
+<li>要分析数据事实上是否可以得到，要培养这个直觉。</li>
+<li>不要寻找过细的数据。</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="org4fae949"></a>要点 提取启发<br /></li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgafa8652" class="outline-3">
+<h3 id="orgafa8652"><span class="section-number-3">3.6</span> 第4章 会议设计能力 总结技巧</h3>
+<div class="outline-text-3" id="text-3-6">
+</div>
+<div id="outline-container-orgc795edc" class="outline-4">
+<h4 id="orgc795edc"><span class="section-number-4">3.6.1</span> STORY-4 开始交涉合作事宜</h4>
+<div class="outline-text-4" id="text-3-6-1">
+</div>
+<ol class="org-ol">
+<li><a id="orgf16f433"></a>毫无反应的众人<br />
+<div class="outline-text-5" id="text-3-6-1-1">
+<ul class="org-ul">
+<li>初次见面便提出合作方案，导致对方拒绝对方案做进一步讨论，还提了一
+大堆问题。这是会议设计出了问题。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgf40a3a5"></a>意想不到的反对<br />
+<div class="outline-text-5" id="text-3-6-1-2">
+<ul class="org-ul">
+<li>坂本副社长发言整整 持续了30分钟，首次会议未能涉及具体的合作内容就
+结束了。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orge7dcf86"></a>咖啡馆内的反省<br />
+<div class="outline-text-5" id="text-3-6-1-3">
+<ul class="org-ul">
+<li>户崎在挫折面前反省
+<ul class="org-ul">
+<li>原因</li>
+<li>收获</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+
+
+<div id="outline-container-org08e014f" class="outline-4">
+<h4 id="org08e014f"><span class="section-number-4">3.6.2</span> 序节 何为会议设计</h4>
+<div class="outline-text-4" id="text-3-6-2">
+</div>
+<ol class="org-ol">
+<li><a id="org3b553ac"></a>会议无聊的原因<br />
+<div class="outline-text-5" id="text-3-6-2-1">
+<ul class="org-ul">
+<li>在日常工作中，会议可谓是家常便饭。</li>
+<li>大多数参会者对会议效果持否定态度，觉得会议无聊。</li>
+<li>原因是会议设计得不好。</li>
+<li>会议需要精心设计。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgdceb90f"></a>无法设计会议的原因<br />
+<div class="outline-text-5" id="text-3-6-2-2">
+<ul class="org-ul">
+<li>很多人缺乏“自己正在开会”这个意识。
+<ul class="org-ul">
+<li>认为大家只是单纯聚集在一起聊天。</li>
+<li>虽然想发言的人在畅所欲言之后感觉爽快了，可是从管理学的角度来看，
+这种发言不会产出什么效果。</li>
+<li>参加会议时不要毫无主题地随便讲话，而应提前确定会议的目的是要做
+出决策还是互通信息。</li>
+</ul></li>
+<li>没能明确分区议题与论点。
+<ul class="org-ul">
+<li>每个会议都有自己的议题。</li>
+<li>然而有了议题，不见得有论点。</li>
+<li>只有议题，没有论点的会议，会开得拖沓，结束时没有结论。</li>
+<li>只有议题没有论点的会议，会导致冷场。</li>
+</ul></li>
+<li>把整体方案和本次方案混为一谈。
+<ul class="org-ul">
+<li>企业方案的规模往往很大，这种大方案不是一次会议就能全讲完的。</li>
+<li>生意场上的方案往往复杂，需要通过若干个小方案的讨论。</li>
+<li>应当在充分意识到整体方案的基础上，从双方能着眼的地方着眼，认真
+设计本次会议的小方案。</li>
+</ul></li>
+<li>没能把握对方的逻辑，因而未能顺着对方的逻辑进行解说。
+<ul class="org-ul">
+<li>提前确认好参会者是哪些人尤为重要。</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="org2b469b8"></a>设计会议时需注意两个因素<br />
+<div class="outline-text-5" id="text-3-6-2-3">
+<ul class="org-ul">
+<li>着陆点
+<ul class="org-ul">
+<li>把握整体方案流程的同时确定好本次方案的进展程度。</li>
+<li>塔里克丝中高层关心的是合作的意义，即能带来什么好处。</li>
+<li>而中山先生却把会议的着陆点定为落实合作的具体日程。</li>
+</ul></li>
+<li>着陆形式
+<ul class="org-ul">
+<li>提前确认参会者的级别、特征、人数。</li>
+<li>根据这些信息设计好会议的形式。</li>
+<li>做好几套开会的方案。</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="org02ca486"></a>要点 何为会议设计(略)<br /></li>
+</ol>
+</div>
+
+
+<div id="outline-container-org2bcd0a7" class="outline-4">
+<h4 id="org2bcd0a7"><span class="section-number-4">3.6.3</span> 第1节 确定着陆点</h4>
+<div class="outline-text-4" id="text-3-6-3">
+</div>
+<ol class="org-ol">
+<li><a id="org7cb201e"></a>“定位”与“输入/输出管理”<br />
+<div class="outline-text-5" id="text-3-6-3-1">
+<ul class="org-ul">
+<li>整体方案必须合逻辑，这是大前提。</li>
+<li>应当在弄清楚会议“定位”的基出上开展“输入/输出管理”。</li>
+<li>定位
+<ul class="org-ul">
+<li>避免参会者认识水平不同而产生混乱。</li>
+<li>大方案划分分小方案时，参会者都应认识到本次会议属于大方案的哪个环
+节，明确会议的定位。</li>
+<li>指本次会议在整个大方案中应当处于何种位置、讨论到何种程度。</li>
+</ul></li>
+<li>输入与输入
+<ul class="org-ul">
+<li>了解会议的定位，就能明确会前应把什么内容通知给参会者，会后应产出
+怎样的效果。</li>
+<li>这样能够改变讨论的效率。</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="org513e433"></a>三种视角决定定位<br />
+<div class="outline-text-5" id="text-3-6-3-2">
+<ul class="org-ul">
+<li>验证假说的视角
+<ul class="org-ul">
+<li>这属于提交方案的视角：目的、论点、假说、验证、启发。</li>
+</ul></li>
+<li>沟通的视角
+<ul class="org-ul">
+<li>见面、听取对方意见、表达意见、互相讨论、决策。</li>
+</ul></li>
+<li>解决问题的视角
+<ul class="org-ul">
+<li>现状、理想状态、对策。</li>
+</ul></li>
+<li>图4-3，从三个视角的交集中确定会议的定位。</li>
+<li>提交方案时具有代表性会议
+<ul class="org-ul">
+<li>项目初始会议
+<ul class="org-ul">
+<li>增进感情、构筑依赖关系</li>
+<li>互通有无，了解双方的现状</li>
+<li>相互磋商、将双方的目的协调一致</li>
+</ul></li>
+<li>研讨会
+<ul class="org-ul">
+<li>就论点和假说展开讨论的会议</li>
+<li>互通信息、征求意见、总结意见、进一步明确论点和假说</li>
+</ul></li>
+<li>中间报告
+<ul class="org-ul">
+<li>进行到讨论假说的阶段，需要我们做出决断。</li>
+<li>是否该采用这个方向的对策，并在会上要求做出决断。</li>
+</ul></li>
+<li>最终报告 
+<ul class="org-ul">
+<li>做出决断，确定是否真要付诸行动。</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="orgee10a64"></a>避免拖拉式的讨论<br />
+<div class="outline-text-5" id="text-3-6-3-3">
+<ul class="org-ul">
+<li>因为定位模糊、没有论点而导致会议拖拉的场面描述。</li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="org10455f0"></a>搞错定位会被要求打回重做<br />
+<div class="outline-text-5" id="text-3-6-3-4">
+<ul class="org-ul">
+<li>“假说”和“启发”混为一谈。
+<ul class="org-ul">
+<li>举例：开发产品A讨论到决策阶段时，被质疑开发A的目的。</li>
+</ul></li>
+<li>把“理想状态”和“对策”混为一谈。
+<ul class="org-ul">
+<li>讨论主题不明确，不知道是讨论“理想状态”，还是“对策”。</li>
+</ul></li>
+<li>轻易做出决策。
+<ul class="org-ul">
+<li>仅仅听了决策项目，明明还没进行深入的研究讨论，就轻易定下了决策。</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="org9ea33ce"></a>管理好会议的“输入/输出”<br />
+<div class="outline-text-5" id="text-3-6-3-5">
+<ul class="org-ul">
+<li>在缺乏应用信息的情况下，就算想展开讨论，也会觉得无话可说。</li>
+<li>对两家公司会面为例，讲解了针对定位的输入/输出。</li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="orgb4bfcf1"></a>“输入/输出管理”的决窍<br />
+<div class="outline-text-5" id="text-3-6-3-6">
+<ul class="org-ul">
+<li>输入(新鲜感)
+<ul class="org-ul">
+<li>一般提交方案需要两三场会议，如果不能每次都输入新东西，为参会者
+带来触动和发现，参会者很快就会感到厌烦。</li>
+</ul></li>
+<li>输入(前进感)
+<ul class="org-ul">
+<li>若没有推进，会令对方大失所望。</li>
+<li>明明没有进展，叫我过来做什么。</li>
+<li>让对方了解到上次会议结束后我们又做了哪些工作、听取会议的讨论后
+我们又进行了怎样的修改。</li>
+</ul></li>
+<li>输出(不要急躁)
+<ul class="org-ul">
+<li>不要急功近利，强行加快会议的进度。</li>
+<li>强行推进，也很有可能被要求重做。</li>
+<li>听取一方不见得能那么快消化内容。要按部就班地推进。</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="orgb493467"></a>要点 确定着陆点(略)<br /></li>
+</ol>
+</div>
+
+
+<div id="outline-container-orgeb0c294" class="outline-4">
+<h4 id="orgeb0c294"><span class="section-number-4">3.6.4</span> 第2节 决定着陆形式</h4>
+<div class="outline-text-4" id="text-3-6-4">
+</div>
+<ol class="org-ol">
+<li><a id="org55d8abf"></a>着陆形式因人而异<br />
+<div class="outline-text-5" id="text-3-6-4-1">
+<ul class="org-ul">
+<li>会议设计成怎样的风格、为会议添加怎样的元素。</li>
+<li>合式的风格会增加效率。</li>
+<li>什么是合适的风格：迎合对方的风格。</li>
+<li>顺着对方的理解方式及思考模式设计出来的方案必然更加容易获得对方的
+理解。</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org6857ee8"></a>理解对方风格的三个决窍<br />
+<div class="outline-text-5" id="text-3-6-4-2">
+<ul class="org-ul">
+<li>是“阅读者”还是“倾听者”
+<ul class="org-ul">
+<li>有人不喜欢听讲话，而喜欢阅读材料，此为阅读者。</li>
+<li>有人一个劲听对方讲话，不看材料，此为倾听者。</li>
+<li>要留意对方的特点，做相应的方案，或做相应风格的会议设计。</li>
+</ul></li>
+<li>是“纵观全局者”还是“连锁把握派”
+<ul class="org-ul">
+<li>纵观全局者，重视横向逻辑，喜欢质疑仅仅如此吗。多为领导者。</li>
+<li>连锁把握者，重视纵向逻辑，喜欢质疑真是这样吗。多为深入基层者。</li>
+</ul></li>
+<li>是“自上而下派”还是“自下而上派”
+<ul class="org-ul">
+<li>看对方的位置和风格，喜欢先结论后推论，还是先证据再结论。</li>
+<li>图4-5显示了两者的差异。</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="org8827f5b"></a>要点 决定着陆形式(略)<br /></li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgf3eea39" class="outline-3">
+<h3 id="orgf3eea39"><span class="section-number-3">3.7</span> 第5章 制作商务文本的能力 制作书面资料的步骤</h3>
+<div class="outline-text-3" id="text-3-7">
+</div>
+<div id="outline-container-org935952c" class="outline-4">
+<h4 id="org935952c"><span class="section-number-4">3.7.1</span> STORY-5 未能通过的方案</h4>
+<div class="outline-text-4" id="text-3-7-1">
+<ul class="org-ul">
+<li>吸取了上次的教训，户崎补上了前面的铺垫，包括：
+<ul class="org-ul">
+<li>上贺茂为什么要做这件事</li>
+<li>上贺茂有多大的诚意</li>
+<li>硬件解决方案的理念是什么&#x2026;</li>
+<li>其余略</li>
+</ul></li>
+<li>信息很大，大家在看资料，许久之后，塔里克丝公司企划部部长桥本、新业
+务开发室的田中课长依次提问。</li>
+<li>由于问题都在准备中，户崎都依照材料做了回答。之后，大家重新开始看资
+料。</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org6e9e5d9" class="outline-4">
+<h4 id="org6e9e5d9"><span class="section-number-4">3.7.2</span> 序节 何为制作商务文本的能力</h4>
+<div class="outline-text-4" id="text-3-7-2">
+</div>
+<ol class="org-ol">
+<li><a id="org0feb137"></a>制作商务文本的五个步骤<br />
+<div class="outline-text-5" id="text-3-7-2-1">
+<ol class="org-ol">
+<li>制作文字信息
+
+<ul class="org-ul">
+<li>把最想表达给对方的话凝缩成几句话。</li>
+<li>要清晰。</li>
+</ul></li>
+
+<li>制作图表
+
+<ul class="org-ul">
+<li>把文字信息转化成图表
+<ul class="org-ul">
+<li>统计图</li>
+<li>图形</li>
+<li>插图</li>
+<li>照片</li>
+</ul></li>
+<li>为了帮助对方正确理解</li>
+</ul></li>
+
+<li>制作幻灯片
+
+<ul class="org-ul">
+<li>把多张图表组合整理到一张纸上</li>
+<li>A4为宜</li>
+</ul></li>
+
+<li>制作资料包
+
+<ul class="org-ul">
+<li>多张幻灯片组合到一起，构成一个完整的故事。</li>
+</ul></li>
+
+<li>资料群
+
+<ul class="org-ul">
+<li>资料包组合起来，提供会议所需要一系列资料群。</li>
+</ul></li>
+</ol>
+
+
+<ul class="org-ul">
+<li>图5-1给出了资料制作各过程的要点。</li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="org755e8fb"></a>用模板制作商务文本<br />
+<div class="outline-text-5" id="text-3-7-2-2">
+<ul class="org-ul">
+<li>使用模板效率高
+<ul class="org-ul">
+<li>场景主题模板</li>
+<li>样式模板</li>
+</ul></li>
+<li>提升品质</li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="org1a5d6d1"></a>一目了然、不被误解<br />
+<div class="outline-text-5" id="text-3-7-2-3">
+<ul class="org-ul">
+<li>一目了解和不被误解是一个矛盾平衡的概念</li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="org2a63365"></a>不要违反人类的阅读习惯<br />
+<div class="outline-text-5" id="text-3-7-2-4">
+<ol class="org-ol">
+<li>按照从左上方至右下方的顺序排列语句</li>
+<li>图文保持一致</li>
+<li>强调重要信息
+<ul class="org-ul">
+<li>主要位置</li>
+<li>字号要大</li>
+</ul></li>
+<li>不同类别的事物不宜使用同一符号表示</li>
+</ol>
+</div>
+</li>
+
+
+<li><a id="orgf2a39f0"></a>需要删除三种类型的内容<br />
+<div class="outline-text-5" id="text-3-7-2-5">
+<ol class="org-ol">
+<li>删除不必要的信息</li>
+<li>删除不必要的文字 
+<ul class="org-ul">
+<li>蝇头小字写所成的冗长段落往往容易令人感到费解</li>
+</ul></li>
+<li>删除不必要的附属信息
+<ul class="org-ul">
+<li>颜色、形状、线条粗细、字体、阴影</li>
+</ul></li>
+</ol>
+</div>
+</li>
+
+
+<li><a id="org75280e0"></a>要点 何为制作商务文本的能力(略)<br /></li>
+</ol>
+</div>
+
+
+<div id="outline-container-orgb08502e" class="outline-4">
+<h4 id="orgb08502e"><span class="section-number-4">3.7.3</span> 第1节 文字信息要简单明了</h4>
+<div class="outline-text-4" id="text-3-7-3">
+</div>
+<ol class="org-ol">
+<li><a id="orgdfd8eca"></a>三行文字讲清内容<br />
+<div class="outline-text-5" id="text-3-7-3-1">
+<ul class="org-ul">
+<li>文字信息被称为开头句，大约三行，一般写在每页纸(幻灯片)的最上方。</li>
+<li>最下方写一到两行总结名，特意强调。</li>
+<li>不是每张幻灯片都得有总结句。</li>
+<li>图5-6显示了文字信息的位置。</li>
+<li>只有数字，没有文字信息不值得欣赏。</li>
+<li>每张幻灯片都要写好文字信息。</li>
+<li>内容凝缩到三行以内。</li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="orged3e371"></a>说明、事实、启发<br />
+<div class="outline-text-5" id="text-3-7-3-2">
+<ul class="org-ul">
+<li>文字信息处应当体现：说明、事实、启发。
+<ul class="org-ul">
+<li>说明
+<ul class="org-ul">
+<li>是指幻灯片上用于介绍“这是什么”的文字信息。</li>
+<li>越是复杂的图表，越是需要说明性文字。</li>
+</ul></li>
+<li>事实
+<ul class="org-ul">
+<li>是指幻灯片上用于介绍“具体内容”的文字信息。</li>
+<li>只是客观阐述图表的具体内容，没有评价其好坏。</li>
+</ul></li>
+<li>启发
+<ul class="org-ul">
+<li>是指幻灯片所提示的“意义”。</li>
+</ul></li>
+</ul></li>
+<li>即使是为同一张图表添加文字信息，说明、事实、启发所需要的文字信息
+也各有不同。</li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="org108249b"></a>文字信息的排列方式<br />
+<div class="outline-text-5" id="text-3-7-3-3">
+<ul class="org-ul">
+<li>说明 &#x2013;&gt; 事实</li>
+<li>事实 &#x2013;&gt; 启发</li>
+<li>启发 &#x2013;&gt; NONE</li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="org101e01f"></a>如何书写文字信息<br />
+<div class="outline-text-5" id="text-3-7-3-4">
+<ul class="org-ul">
+<li>判断文字信息好坏的标准
+<ul class="org-ul">
+<li>目的性：符合讨论的目的，回答对方的论点。</li>
+<li>崭新性：能为对方提供新的发现，或让对方感到吃惊。</li>
+<li>明确性：明快地描述具体内容。</li>
+<li>方向性：告知对方应如何去做(行动)。</li>
+</ul></li>
+<li>说明，只需满足目的性和崭新性。</li>
+<li>事实，满足目的、崭新、明确性，可以没有方向性。</li>
+<li>启发，含义最深的文字信息，则需同时满足4个要素。</li>
+<li>具体含义
+<ol class="org-ol">
+<li>目的性
+<ul class="org-ul">
+<li>擅长写作不见得就能写出符合目的的文字信息。</li>
+<li>第2章，能否采用纵向和横向逻辑描述出整个提案的框架。</li>
+<li>第3章，是否符合目的和论点。否则，写了一大堆也毫无意义。</li>
+<li>第4章，是否符号“本次方案”的内容同样重要。</li>
+</ul></li>
+<li>崭新性：能为对方提供新的发现，或让对方感到吃惊。
+<ul class="org-ul">
+<li>一旦对方认为“这些话不用讲我也知道”，就意味着文字信息没有任
+何意义。</li>
+<li>为了避免缺乏崭新性，应事先充分调查对方的情况，认真理解对方的
+需求。</li>
+</ul></li>
+<li>明确性：明快地描述具体内容。
+<ul class="org-ul">
+<li>具体清晰地表达想说的内容。</li>
+</ul></li>
+<li>方向性：告知对方应如何去做(行动)。
+<ul class="org-ul">
+<li>告诉对方接下来该采取怎样的行动。</li>
+</ul></li>
+</ol></li>
+<li>图5-10 没有意义的文字信息
+<ul class="org-ul">
+<li>这个图需要反复体会</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="org34516d2"></a>书写文字信息时的三个注意事项<br />
+<div class="outline-text-5" id="text-3-7-3-5">
+<ul class="org-ul">
+<li>简洁表达
+<ul class="org-ul">
+<li>在下节具体讲解，即凝缩文字信息。</li>
+</ul></li>
+<li>统一词汇
+<ul class="org-ul">
+<li>如果是同一个信息，就该统一词汇。</li>
+<li>如果是不同意思，就该明确指出哪里不同。</li>
+</ul></li>
+<li>照顾对方的情绪
+<ul class="org-ul">
+<li>一定要谨慎用词，千万别稀里糊涂得罪对方。</li>
+<li>否定对方，建议  &#x2013;&gt;  如果(建议)，则展望。</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="orgba1c4f5"></a>凝缩文字信息的手法<br />
+<div class="outline-text-5" id="text-3-7-3-6">
+<ol class="org-ol">
+<li>把结论放到前面</li>
+<li>删除多余的语句</li>
+<li>避免词汇重复</li>
+<li>使用概括性词汇</li>
+</ol>
+</div>
+</li>
+
+
+<li><a id="orgbc85a87"></a>要点 文字信息应简洁易懂(略)<br /></li>
+</ol>
+</div>
+
+
+
+<div id="outline-container-org67c23d3" class="outline-4">
+<h4 id="org67c23d3"><span class="section-number-4">3.7.4</span> 第2节 把文字信息制作图表</h4>
+<div class="outline-text-4" id="text-3-7-4">
+</div>
+<ol class="org-ol">
+<li><a id="org8203cd6"></a>瞬间传达意思<br />
+<div class="outline-text-5" id="text-3-7-4-1">
+<ul class="org-ul">
+<li>图表能够在一瞬间把意思传达给对方。</li>
+<li>图5-13解释了何为增加卖场附加值，对比了纯文字和图表的表现力。</li>
+<li>不要让对方大量阅读信息，不要让对方费神思考，不能使用冗长的文字。</li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="org79b2f6e"></a>图表的内容与排版<br />
+<div class="outline-text-5" id="text-3-7-4-2">
+<ul class="org-ul">
+<li>你的脑海里虽然有模糊的想法，却不知道应该写什么、怎么写。</li>
+<li>因为幻灯片上只有文字未免显得太过单调，于是你随便添加了些图形，加
+了点阴影，调整了一下字体和字号。</li>
+<li>与其说是为他人准备的商务文本，不如说是单纯罗列了自己各种想法的笔
+记。</li>
+<li>图表可分为“内容”与“排版”这两个概念。</li>
+<li>内容包括统计图、插图、文本等无法再被细化的图形。</li>
+<li>图表的排版是指上述内容的排列方式。</li>
+<li>我需要一个什么样的内容，我把它们放在哪里。</li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="org502b63d"></a>图表内容只有三种<br />
+<div class="outline-text-5" id="text-3-7-4-3">
+<ul class="org-ul">
+<li>插图：用于加深读者印象的图画和照片。
+<ul class="org-ul">
+<li>图画、照片。</li>
+<li>不易引起误解，使用便利。</li>
+</ul></li>
+<li>统计图：可以使统计数字变量更加直观，方便人们阅读。
+<ul class="org-ul">
+<li>饼状图、柱状图、曲线图、散点图、雷达图。</li>
+</ul></li>
+<li>文本：无法用图示信息时，则用文字表示。
+<ul class="org-ul">
+<li>文本框</li>
+<li>使用凝缩文字信息怕手法，做出简单易懂的文本框。</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="orgb6f7312"></a>图表排版只有四种<br />
+<div class="outline-text-5" id="text-3-7-4-4">
+<ul class="org-ul">
+<li>关联图
+<ul class="org-ul">
+<li>用来表示因果关系</li>
+</ul></li>
+<li>流程图
+<ul class="org-ul">
+<li>事物的流程</li>
+</ul></li>
+<li>树状图
+<ul class="org-ul">
+<li>逻辑树和论点树</li>
+<li>总分关系</li>
+</ul></li>
+<li>表格
+<ul class="org-ul">
+<li>按照纵轴和横轴分类时使用</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="orga374962"></a>图表的装饰<br />
+<div class="outline-text-5" id="text-3-7-4-5">
+<ol class="org-ol">
+<li>尽量使用图形
+<ul class="org-ul">
+<li>避免使用文字和数字，多用插图。</li>
+</ul></li>
+<li>设计合适的标题
+<ul class="org-ul">
+<li>清晰地说明要表达什么。</li>
+</ul></li>
+<li>标记重点部分
+<ul class="org-ul">
+<li>图5-16显示了重点标记的重要性。</li>
+</ul></li>
+</ol>
+</div>
+</li>
+
+
+<li><a id="orgbf70783"></a>组装制作图表<br />
+<div class="outline-text-5" id="text-3-7-4-6">
+<ul class="org-ul">
+<li>首先要确认信息
+<ul class="org-ul">
+<li>我们要表达什么内容</li>
+<li>哪种图表排版最适合说明我们的逻辑</li>
+<li>哪种图表内容最适合说明我们找到的依据。</li>
+</ul></li>
+<li>示例1，2
+<ul class="org-ul">
+<li>先列出内容，用文字表达</li>
+<li>找出各条内容对应的最佳形容。</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="orga0f9bca"></a>要点 把文字信息制作成图表(略)<br /></li>
+</ol>
+</div>
+
+
+
+<div id="outline-container-org8b7c6eb" class="outline-4">
+<h4 id="org8b7c6eb"><span class="section-number-4">3.7.5</span> 第3节 配置幻灯片</h4>
+<div class="outline-text-4" id="text-3-7-5">
+</div>
+<ol class="org-ol">
+<li><a id="orgd79f136"></a>制作幻灯片需注意两个要点<br />
+<div class="outline-text-5" id="text-3-7-5-1">
+<ol class="org-ol">
+<li>幻灯片的上方必须添加文字信息(开头句)</li>
+<li>文字信息和图表应相呼应
+<ul class="org-ul">
+<li>幻灯片应分类：说明、事实、启发类幻灯片。</li>
+</ul></li>
+</ol>
+</div>
+</li>
+
+
+<li><a id="org1cd52b4"></a>提高完成度的三个技巧<br />
+<div class="outline-text-5" id="text-3-7-5-2">
+<ul class="org-ul">
+<li>三个技巧(图5-20)
+<ol class="org-ol">
+<li>符合阅读习惯
+<ul class="org-ul">
+<li>越接近右下方越接近结论。</li>
+</ul></li>
+<li>最大程度利用纸张</li>
+<li>整齐排列</li>
+</ol></li>
+<li>用示例说明
+<ul class="org-ul">
+<li>图5-21 不好的幻灯片 &#x2013;&gt; 图5-22 改善后的幻灯片</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="org2d5766f"></a>要点 配置幻灯片(略)<br /></li>
+</ol>
+</div>
+
+
+<div id="outline-container-org4e9495e" class="outline-4">
+<h4 id="org4e9495e"><span class="section-number-4">3.7.6</span> 第4节 完成资料包</h4>
+<div class="outline-text-4" id="text-3-7-6">
+</div>
+<ol class="org-ol">
+<li><a id="orgf408d1a"></a>制作资料包的注意事项<br />
+<div class="outline-text-5" id="text-3-7-6-1">
+<ul class="org-ul">
+<li>并非把幻灯片排列起来，而是要达到“能让读者理解”的结果。</li>
+<li>注意事项
+<ol class="org-ol">
+<li>必须包含启发
+<ul class="org-ul">
+<li>无论内容、页数多少，都要包含启发。</li>
+<li>启发，即向读者传达什么。</li>
+</ul></li>
+<li>迎合对方的逻辑
+<ul class="org-ul">
+<li>对方是纵观全局派还是连锁把握派</li>
+<li>是自下而上派还是自上而下派</li>
+<li>根据对方的特点，组织材料，形成适合于对方逻辑的材料顺序</li>
+</ul></li>
+<li>区分使用三个切入点
+<ul class="org-ul">
+<li>使用场合不同，报告书及策划方案的整合方式也会有所不同。</li>
+<li>图5-25 展示了不同视角下资料包的整合方法。</li>
+<li>三种切入点
+<ul class="org-ul">
+<li>操作视点
+<ul class="org-ul">
+<li>以实际进行的工作为切入点进行总结，又称任务视点</li>
+<li>优点：清楚了解工作的进展情况。</li>
+<li>缺点：不知道工作完成后能得出怎样的结论。</li>
+<li>场合：课题刚开始时的工作计划，简单的进展报告</li>
+</ul></li>
+<li>项目视点
+<ul class="org-ul">
+<li>在某视基础的框架内总结各项内容。</li>
+<li>市场、竞争、己方公司</li>
+<li>战略、流程、机构</li>
+<li>优点：具备全局观，能有效避免产生遗漏。</li>
+<li>缺点：难以了解具体做了哪些工作。也不知道能得出什么样的结
+论。</li>
+<li>场合：中间阶段小型报告会</li>
+</ul></li>
+<li>论点视点
+<ul class="org-ul">
+<li>将想说的内容分类归纳</li>
+<li>新业务的可行性、产品研发、重新审视销售体系</li>
+<li>优点：清楚直率传达想说的内容</li>
+<li>缺点：缺乏全局观，不了解工作的具体进展情况</li>
+<li>场合：短时间的会议；最终报告会的总结性资料</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ol></li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="org2ba6bde"></a>要点 完成资料包(略)<br /></li>
+</ol>
+</div>
+
+
+<div id="outline-container-org924e6b4" class="outline-4">
+<h4 id="org924e6b4"><span class="section-number-4">3.7.7</span> 第5节 整合资料群</h4>
+<div class="outline-text-4" id="text-3-7-7">
+</div>
+<ol class="org-ol">
+<li><a id="org1a26d7c"></a>构建资料群<br />
+<div class="outline-text-5" id="text-3-7-7-1">
+<ul class="org-ul">
+<li>资料群与会议设计类似，要清楚了解会议目的及参会者的基础上着手准备。</li>
+<li>构建资料群，要包括8个资料包。
+<ol class="org-ol">
+<li>摘要
+<ul class="org-ul">
+<li>一张纸大小，幻灯片寥寥几页；</li>
+<li>自上而下方式，则置前；</li>
+<li>自下而上方式，则置后；</li>
+<li>信息需要高度凝缩，添加的启发需言之有物，所以制作难度相当之高。</li>
+</ul></li>
+<li>前提
+<ul class="org-ul">
+<li>事情的原委、本次会议的背景及目的等。</li>
+</ul></li>
+<li>全景
+<ul class="org-ul">
+<li>总结了论点的任务和验证任务，以及本次会议的定位等；</li>
+<li>若没有全景资料包，则不清楚本次会议的定位。</li>
+</ul></li>
+<li>内容
+<ul class="org-ul">
+<li>具体资料，被很多人误以为这部分是全部资料群；</li>
+<li>包括：说明性、事实性、启发性幻灯片。</li>
+</ul></li>
+<li>论点清单
+<ul class="org-ul">
+<li>大字号明确介绍：议题、需要反馈的事项；</li>
+<li>避免偏离正轨。</li>
+</ul></li>
+<li>问答卡
+<ul class="org-ul">
+<li>为参会者设计的答题用纸，上面写着若干问题，要求参会者作答；</li>
+<li>为了让讨论按照预定的方向展开，需要按照论点清单来引导；</li>
+<li>通常情况下，提前派发给参会者，要求在会议之前思考问答卡的问题，
+然后在会议上讨论。</li>
+</ul></li>
+<li>日程安排
+<ul class="org-ul">
+<li>具体日程：本次会议之后立刻要展开的工作；</li>
+<li>大致日程；最终目标大概于何时完成。</li>
+</ul></li>
+<li>参考数据
+<ul class="org-ul">
+<li>容易破坏故事线，只作为参考信息存在。</li>
+</ul></li>
+</ol></li>
+<li>会议类型必选项(见图5-26)
+<ol class="org-ol">
+<li>企划介绍会：前提、全景</li>
+<li>项目初始会议：前提、全景、日程安排</li>
+<li>研讨会：内容、论点清单、问答卡</li>
+<li>小型报告会：内容、日程安排</li>
+<li>最终报告会：摘要、前提、全景</li>
+</ol></li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="org320fd3b"></a>要点 整合资料群(略)<br /></li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org8ed4c7d" class="outline-3">
+<h3 id="org8ed4c7d"><span class="section-number-3">3.8</span> 第6章 终章</h3>
+<div class="outline-text-3" id="text-3-8">
+</div>
+<div id="outline-container-orgdb0c649" class="outline-4">
+<h4 id="orgdb0c649"><span class="section-number-4">3.8.1</span> STORY-6 方案的成功</h4>
+<div class="outline-text-4" id="text-3-8-1">
+</div>
+<ol class="org-ol">
+<li><a id="org6b94224"></a>最后的决战<br />
+<div class="outline-text-5" id="text-3-8-1-1">
+<ul class="org-ul">
+<li>20页商务文本完整介绍了整个方案</li>
+<li>最后还附一张总结，清晰罗列了提案的重点事项</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org5127f15" class="outline-2">
+<h2 id="org5127f15"><span class="section-number-2">4</span> 评述</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>在我们日常的商务活动中，沟通，特别是旨在通过某项方案的书面沟通无所不在。
+我们都曾经为使自己的方案得以通过殚精竭虑过，如一次竞标、一个制度、一交
+谈判。这里面的艰辛只有经历过的人才知道。如果你想提升提案效率，这是一本
+你应该仔细阅读的书。</li>
+
+<li>讲解如何让策划方案成功通过(书面沟通)的技巧，即如何准确`思考`和`传达`。
+<ul class="org-ul">
+<li>第1章 书面沟通中的核心概念和原则</li>
+<li>第2章 学习思考问题：用纵向和横向逻辑</li>
+<li>第3章 学习如何使用验证假说能力回答对方的疑问</li>
+<li>第4章 学习如何具体设计出(沟通)效果良好的会议</li>
+<li>第5章 讨论商务文本的制作技巧</li>
+<li>第6章 叙述虚构商务故事的结果</li>
+</ul></li>
+
+<li>本书的前提
+<ul class="org-ul">
+<li>我们希望我们的方案得到对方的认同。若不具备这个前提，则另当别论。</li>
+<li>书中将人与人的沟通限定在了一个较为理性（单纯依赖逻辑）的场景中。
+<ul class="org-ul">
+<li>这与实际情况有差异。事实上，即便在商务场合下，情绪和感情也是重要的
+因素。</li>
+</ul></li>
+</ul></li>
+
+<li>这个场景并非只是商务场合，在日常生活中也多见。</li>
+
+<li>我们的目标是实现书面沟通中的精准表达，然而为了做出准确的思考思考，则需
+要口头沟通实现目的和论点的明确。</li>
+
+<li>若不了解这本书的方法，终究会导致问题。</li>
+
+<li>从长远角度来讲，持续的成长还是靠学习。有了知识，才能做好吸收实践营养的
+准备。才能意识到营养的存在，并能吸收消化，最终为我用。</li>
+
+<li>在实践中，应该经常反省
+<ul class="org-ul">
+<li>是方法不适用，还是使用不当，还是缺少其它方法辅助；</li>
+<li>应该就实践中出现的案例经常反省</li>
+</ul></li>
+
+<li>验证假说中就涉及逻辑思考。</li>
+
+<li>我们经常遇到这么一种情况：“当时没做好沟通，事后才想明白为什么。”或者还会
+说：“道理我都懂，可当时就忘了使用方法。”我想说：“如果真是这样，说明
+还是没有真懂。没有转化为下意识行为，就是没有真懂。”</li>
+
+<li>精确表达，帮助我们理性和准确的思考；非暴力沟通，解决了具体沟通中的方法；
+其它方法书，提供了很多素材和信息，辅助我们构建假说，丰富我们的横向逻辑
+和纵向逻辑。</li>
+
+<li>书名虽然是精确表达，但离不开思考。</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>为了实现这两个目标，所需要的技能和步骤。</li>
+
+<li>通过描述5次会议的对话，展示了历次书面方案中存在的问题。</li>
+
+<li>6次会议
+<ul class="org-ul">
+<li>第1次: 上贺茂制作所，电话咨询后
+<ul class="org-ul">
+<li>Precena公司平泉、户崎、川岛 vs 上贺茂中山</li>
+<li>中山没有听懂户崎对方案的讲述</li>
+</ul></li>
+<li>第2次: 上贺茂制作所，2个月
+<ul class="org-ul">
+<li>Precena公司户崎、川岛 vs 上贺茂管理层（中层）</li>
+<li>上贺茂管理层提出诸多质疑</li>
+</ul></li>
+<li>第3次: 上贺茂制作所，4个月
+<ul class="org-ul">
+<li>Precena公司平泉、户崎，川岛 vs 上贺茂中山，宫里社长</li>
+<li>社长对与塔里克丝公司合作提出质疑</li>
+</ul></li>
+<li>第4次: 塔里克丝公司，4个月
+<ul class="org-ul">
+<li>Precena公司户崎，上贺茂渡边、中山 vs 塔里克丝公司坂本副社长</li>
+<li>塔里克丝公司对合作前提有质疑</li>
+</ul></li>
+<li>第5次：塔里克丝公司，6个月
+<ul class="org-ul">
+<li>Precena公司平泉，户崎，上贺茂渡边、中山 vs 塔里克丝公司管理层(中层)</li>
+</ul></li>
+<li>第6次：塔里克丝公司，6个月
+<ul class="org-ul">
+<li>Precena公司平泉，户崎，川岛，上贺茂渡边、中山 vs 塔里克丝公司社长
+野濑、坂本(高层)</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: wall-e</p>
+<p class="date">Created: 2020-02-09 Sun 20:22</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

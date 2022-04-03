@@ -1,0 +1,35 @@
+* Win10
+
+** 制作启动u盘
+   - [[https://rufus.ie][Rufus]]
+
+** Emacs
+   - 填加emacs的bin路径到path中
+   - 运行 ~runemacs.exe~
+   - 设置 ~HOME=%emacs路径%~
+   - ~.emacs.d~ 和 ~.custom.el~ 置于 ~HOME~ 路径中
+
+** Vim
+   - 增加vim.exe所在路径到path中
+
+** Git
+   - 增加git的bin所在路径到path中
+   - .gitconfig到底在哪还不确定，可能在用户目录下
+   - 对于github需要设
+   
+** Windows terminal
+   - 集成git的bash.exe，在命令行中设置 ~cmd.exe /k bash.exe~
+   - 集成git的bash.exe后会出现乱码，在环境变量中加入 ~LC_ALL=zh_CN.UTF-8~
+   - 启动目录
+     - 用户：%USERPROFILE% 
+   - 分屏
+     - alt + shift + = 竖向分屏(pane)
+     - alt + shift + - 水平分屏
+     - alt + shift + <arrow key> 按方向键改变分屏大小
+     - alt + <arrow key> 切换分屏
+     - ctrl + shift + w  关闭分屏
+
+** Python
+   - 各个版本统一安装到 ~c:\python~ 中
+   - ~pip.ini~ 在 ~C:\ProgramData\pip~ 中
+   

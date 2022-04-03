@@ -1,0 +1,15 @@
+#+TITLE: 正则表达式
+#+AUTHOR: 杨大伟
+#+LATEX_CLASS: article 
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[utf-8]{ctex}
+#+LATEX_HEADER: \usepackage[margin=2cm]{geometry}
+
+** 教程
+
+- [[https://deerchao.net/tutorials/regex/regex.htm][正则表达式30分钟入门教程]]
+- [[https://www.python-course.eu/re.php][Regular Expressions]]
+
+** 测试工具
+
+- [[https://regex101.com/][regex101.com]]

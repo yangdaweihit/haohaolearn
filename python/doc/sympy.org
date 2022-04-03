@@ -1,0 +1,3 @@
+* SymPy
+
+- [[https://www.sympy.org/en/index.html][SymPy]]: 符号数学Python库，功能强大的计算机代数系统。

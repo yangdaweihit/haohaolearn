@@ -1,0 +1,36 @@
+* Org
+** Edit
+   - C-q : format paragraph
+** Dates and Times
+*** Creating Timestamps
+    - ~C-c .~ : 提示日期并插入一个对应的时间戳
+    - ~C-c !~ : 插入一个未激活时间戳，不可引起一个议程项
+** Source Code
+   - ~C-c C-,~ : to insert source code markup
+   - ~C-c '~ : to edit
+   - ~C-c C-c~ : to eval
+** Table
+    - 参照：[[https://www.cnblogs.com/halberd-lee/p/10614219.html][halberd's blog]]
+    - 表格横线：C-c Enter
+    - 生成表格：C-c |
+    - 生成一行 |—+----| 结构： |- TAB
+	- S M Right: 题目向下一层
+	- S M Left: 题目向上一层
+	- C c SPC: 清除当前格
+** ToDo Items
+   - 标题由 ~TODO~ 开始，该标题就成为TODO项；
+   - 用 ~C-c C-t~ 循环
+   - ~S-Right~, ~S-Left~ 同上切换状态
+** 12 Markup for Rich Contents
+*** 12.7 Images
+    - https://orgmode.org/manual/Images.html
+    - 图片是一个没有题目的链接
+    - ~C-c C-x C-v~  Toggle the inline display of linked images
+    - 源码
+      #+begin_src 
+      #+ATTR_HTML: width="100px"
+      #+ATTR_ORG: :width 400
+      [[file:figures/four types.png]]
+      #+end_src
+    
+  

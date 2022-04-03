@@ -1,0 +1,9 @@
+dddd;; Happy hacking wall-e - Emacs loves you!
+
+(+ 2 (+ 3 3))
+(fill-column)
+(+ 2  2)
+(concat "abc" "def")
+
+(set 'flowers '(rose violet daisy buttercup))
+'flowers

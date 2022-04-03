@@ -1,0 +1,201 @@
+!---------------------------------------------------------------------
+! v004.dat 拉索模态分析
+! 由三段式拉索模型分析自振频率
+! 
+! 输入文件：data.txt
+! 数据格式：17个浮点型数，中间用逗号分隔，每个浮点数都必须含有小数点
+! 输出文件：freq_n.txt
+! 数据格式: f15.5 自振频率
+!
+! 陈少峰-李大军团队
+! 哈尔滨工业大学
+! 2015-10-14
+!---------------------------------------------------------------------
+FINISH
+/CLEAR
+
+/INQUIRE,NCABLE,LINES,data,txt
+*DIM,PARAMETER,,NCABLE,17
+*VREAD,PARAMETER,predata,txt,,JIK,17,NCABLE
+(17F20.0)
+
+PARSAV,ALL,para,parm  !存储parameter数组，各元素解释见下文。
+
+*DO,NCABLE_LOOP,1,NCABLE
+  PARSAV,,ncable_loop,parm 
+  FINISH
+  /CLEAR
+  PARRES,NEW,para,parm
+  PARRES,CHANGE,ncable_loop,parm
+
+  R1    = PARAMETER(NCABLE_LOOP,1)/1000      !左端过渡段半径 mm
+  L1    = PARAMETER(NCABLE_LOOP,2)           !左端过渡段长度 m
+  DIV1  = PARAMETER(NCABLE_LOOP,3)           !左端过渡段单元数
+  R2    = PARAMETER(NCABLE_LOOP,4)/1000      !中段半径 mm
+  L2    = PARAMETER(NCABLE_LOOP,5)           !中段长度 m
+  DIV2  = PARAMETER(NCABLE_LOOP,6)           !中段单元数
+  R3    = PARAMETER(NCABLE_LOOP,7)/1000      !右端过渡段半径 mm
+  L3    = PARAMETER(NCABLE_LOOP,8)           !右端过渡段长度 m
+  DIV3  = PARAMETER(NCABLE_LOOP,9)           !右端过渡段单元数  
+  K1    = PARAMETER(NCABLE_LOOP,10)          !弹簧刚度 线性  N/m
+  K2    = PARAMETER(NCABLE_LOOP,11)          !弹簧刚度 扭转  N.m/rad
+  K3    = PARAMETER(NCABLE_LOOP,12)          !弹簧刚度 线性  N/m
+  K4    = PARAMETER(NCABLE_LOOP,13)          !弹簧刚度 扭转  N.m/rad
+  MOD   = PARAMETER(NCABLE_LOOP,14)          !弹性模量 Pa
+  RHO   = PARAMETER(NCABLE_LOOP,15)          !容重 kg/m^3
+  NFREQ = PARAMETER(NCABLE_LOOP,16)          !频阶数
+  T     = PARAMETER(NCABLE_LOOP,17)          !拉力 N
+
+  /COM,ANSYS MEDIA REL. 160 (10/13/2015) 
+  /PREP7
+  ELE1 = L1 / DIV1 
+  ELE2 = L2 / DIV2
+  ELE3 = L3 / DIV3
+  ELE_MID = ELE1 + NINT(ELE2/2)
+  MP,PRXY,,0.3
+  /TITLE, V003, LATERAL VIBRATION OF AN TENSIONED CABLE
+  ANTYPE,STATIC
+  RESCONTROL,LINEAR,ALL,1
+  ET,1,BEAM188,,,3
+  SECTYPE,1,BEAM,CSOLID
+  SECDATA,R1
+  SECTYPE,2,BEAM,CSOLID
+  SECDATA,R2
+  SECTYPE,3,BEAM,CSOLID
+  SECDATA,R3
+  MP,EX,1,MOD
+  MP,DENS,1,RHO
+
+  N1 = 1
+  N2 = N1 + DIV1
+  N3 = N2 + DIV2
+  N4 = N3 + DIV3
+
+  N,N1,0 
+  N,N2,L1
+  N,N3,L1+L2
+  N,N4,L1+L2+L3
+  
+  ET,11,COMBIN14
+  MP,PRXY,11,0.3
+  KEYOPT,11,2,2     !   uy
+  R,11,K1
+
+  ET,12,COMBIN14
+  MP,PRXY,12,0.3
+  KEYOPT,12,2,6      !  rotZ
+  R,12,K2
+
+  ET,13,COMBIN14
+  MP,PRXY,13,0.3
+  KEYOPT,13,2,2      !  uy
+  R,13,K3
+
+  ET,14,COMBIN14
+  MP,PRXY,14,0.3
+  KEYOPT,14,2,6      !  rotZ
+  R,14,K4
+
+  N,100000,0
+  N,200000,L1+L2+L3
+
+  *IF,(N2-N1),GT,1,THEN
+    FILL,N1,N2,,,1
+  *ENDIF
+
+  *IF,(N3-N2),GT,1,THEN
+    FILL,N2,N3,,,1
+  *ENDIF
+
+  *IF,(N4-N3),GT,1,THEN
+    FILL,N3,N4,,,1
+  *ENDIF
+
+  *DO,ILOOP,N1,N2-1
+    SECNUM,1
+    E,ILOOP,ILOOP+1
+  *ENDDO
+  
+  *DO,ILOOP,N2,N3-1
+    SECNUM,2
+    E,ILOOP,ILOOP+1
+  *ENDDO
+
+  *DO,ILOOP,N3,N4-1
+    SECNUM,3
+    E,ILOOP,ILOOP+1
+  *ENDDO
+
+  !在两端添加轴向和扭转弹簧
+  TYPE,11
+  REAL,11
+  MAT,11
+  E,N1,100000     !左端 位移弹簧
+
+  TYPE,12
+  REAL,12
+  MAT,12
+  E,N1,100000     !左端  转角弹簧
+
+  TYPE,13
+  REAL,13
+  MAT,13
+  E,N4,200000     !右端  位移弹簧
+
+  TYPE,14
+  REAL,14
+  MAT,14
+  E,N4,200000     !右端  转角弹簧
+
+  D,ALL,UZ,,,,,ROTX,ROTY       ! 全部节点约束在xoy平面内 
+  D,N1,UX                      ! 限制左端x方向线位移
+  D,100000,ALL                 ! 弹簧节点边界条件
+  D,200000,ALL
+
+  F,N4,FX,T                    ! 施加拉力
+
+  FINISH
+  /OUTPUT,SCRATCH,DAT
+  /SOLU    
+  OUTPR,BASIC,1
+  SOLVE
+  FINISH
+
+  /SOLU    
+  ANTYPE,STATIC,RESTART,,,PERTURB	
+  PERTURB,MODAL,,,PARKEEP
+  SOLVE,ELFORM			
+  MODOPT,LANB,NFREQ+2
+  MXPAND,NFREQ+2      
+  SOLVE
+  /OUT
+
+  *DIM,FREQ1,,NFREQ+2,nopr
+  *DIM,FREQ2,,NFREQ+2,nopr
+  *DIM,FREQ3,,NFREQ,nopr
+  *DIM,PFI,,NFREQ+2,nopr
+
+  *DO,FREQLOOP,1,NFREQ+2
+    *GET,FREQ1(FREQLOOP),MODE,FREQLOOP,FREQ
+    *GET,PFI(FREQLOOP),MODE,FREQLOOP,PFACT
+  *ENDDO
+
+   CLOOP = 1
+ *DO,TLOOP,1,NFREQ+2
+   *IF,ABS(PFI(TLOOP)),GT,0.001,THEN
+     FREQ2(CLOOP) =  FREQ1(TLOOP)
+     CLOOP = CLOOP+1
+   *ELSEIF,ABS(PFI(TLOOP)),LT,0.001
+   *ENDIF
+ *ENDDO   
+  *DO,TLOOP,1,NFREQ
+     FREQ3(TLOOP) =  FREQ2(TLOOP)
+  *ENDDO
+
+  ncable_loop = ncable_loop
+  *CFOPEN,freq_%ncable_loop%,txt
+  *VWRITE,FREQ3(1)
+  (F15.5)                                       
+  *CFCLOS
+
+*ENDDO

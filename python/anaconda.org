@@ -1,0 +1,4 @@
+* Anaconda
+
+- 从[[https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/][下载镜像]]获取最新的版本后安装即可
+

@@ -1,0 +1,81 @@
+* SCons User
+** 手册 
+- [[https://www.scons.org/doc/PDF/][PDF]]
+
+** 示例 
+- [[https://github.com/scons/scons/wiki/MultipleDirectoryFortranBuild][示例]]
+
+** 笔记
+*** 1. 构建和安装
+*** 2. 简单构建
+**** 构件方法(build method)
+  - Program(), env.Program()
+    + 将源文件构建为可执行程序。
+
+  - Object()
+    + 将源文件构建为目标文件。
+
+  - scons -C
+    + 构建完成后清除所有输出。
+
+  - SConstruct文件
+    + SConstruct文件相当于Makefile，即配置文件。
+
+  - Program('program', Split('main.c file1.c file2.c'))
+    + 易读
+
+  - 参数
+  
+  #+begin_example python
+  src_files = Split('main.c file1.c file2.c')
+  Program(target = 'program', source = src_files)
+  #+end_example
+
+  - 公共文件
+
+ #+begin_example python
+ common = ['common1.c', 'common2.c']
+ foo_files = ['foo.c'] + common
+ bar_files = ['bar1.c', 'bar2.c'] + common
+ Program('foo', foo_files)
+ Program('bar', bar_files)
+ #+end_example
+*** 3. 事半功倍
+*** 4. 构建和连接库
+*** 5. 节点对象
+*** 6. 依赖
+**** page 34
+**** 用MD5码决定是否文件已改变(默认)
+#+begin_example python
+Program('hello.c')
+Decider('MD5')
+#+end_example
+**** 用时间戳
+#+begin_example python
+Program('hello.c')
+Decider('timestamp-newer')
+Decider('make')
+#+end_example
+**** MD5和时间戳
+- 先检查时间戳，发现有变化后再检查内容。
+#+begin_example python
+Program('hello.c')
+Decider('MD5-timestamp')
+#+end_example
+**** 显式依赖：Depends函数
+      - 目标hello依赖于other_file
+#+begin_example python
+hello = Program('hello.c')
+Depends(hello, 'other_file')
+#+end_example 
+
+**** 对外部文件依赖
+      - 依赖于hello.d
+#+begin_example python
+obj = Object('hello.c', CCFLAGS='-MD -MF hello.d', CPPPATH='.')
+SideEffect('hello.d', obj)
+ParseDepends('hello.d')
+Program('hello', obj)(hello, 'other_file')
+#+end_example 
+*** 7. 环境
+

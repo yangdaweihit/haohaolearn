@@ -1,0 +1,15 @@
+* Visual Studio Code
+** 快捷键
+   - C-S-x: 显示插件列表
+   - C-S-p: 命令面板
+
+     
+** 插件 
+   - Org Mode
+   - Excel Viewer：点击文档Tab右键Open 
+   - Markdown All in One
+   - Markdown Preview Enhanced
+   - Markdown Preview Github Styling
+
+
+

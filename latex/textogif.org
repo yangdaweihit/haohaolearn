@@ -1,0 +1,37 @@
+* TextoGIF
+
+TextoGIF是由[[https://www.fourmilab.ch/webtools/textogif/][John Walker]]创造的小工具，用于将写在tex文档中的公式转换为GIF
+或PNG图片。
+
+** 示例
+   文件 ~test.tex~ ：
+   #+begin_src latex
+   \documentclass[12pt]{article}
+   \pagestyle{empty}  % 避免产生页脚
+   \begin{document}
+
+   \begin{displaymath}
+   \int H(x,x')\psi(x')dx' = -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}
+                             \psi(x)+V(x)\psi(x)
+   \end{displaymath}
+
+   \end{document}
+   #+end_src
+
+   如下命令将生成一个图片 ~test.gif~ ：
+
+   textogif tes.tex
+
+** 命令行选项
+
+   #+begin_notes
+   textogif <options> [tex file]
+   #+end_notes
+
+*** -dpi nnn
+    ~nnn~ 为整数，表示每英寸的点数，用来定义图片大小。
+*** -png
+    生成PNG图片
+
+** 参考
+   - https://www.fourmilab.ch/webtools/textogif/

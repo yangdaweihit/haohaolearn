@@ -1,0 +1,5 @@
+**/*.swp
+*.pdf
+auto/
+__pycache__
+

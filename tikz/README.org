@@ -1,0 +1,90 @@
+* 11. Design Principles(设计原理)
+** Special Syntax For Specifying Points(定义几何点的特定语法)
+   - (1cm, 2pt)
+   - (2,1): 默认单位cm
+   - (30: 1cm): 1cm 在30度方向上
+   - (1,1,1): xyz
+   - (first node.south)：定义对象的锚点
+   - (1,0) ++(1,0) ++(0,1)：坐标累加
+   - (1,0) +(1,0) +(0,1): 在第一个点上做增量
+** Special Syntax For Path Specifications(路径定义的特殊语法)
+   - 路径是一系列直线或曲线
+   - (5pt,0pt) -- (0pt,0pt) -- (0pt,5pt) -- cycle
+** Actions on Paths(路径上动作)
+   - draw(stroke), fill, shade, clip
+   - \draw , \path[draw]
+   - \fill, \path[fill]
+   - \filldraw, \path[fill, draw]
+   - \clip, \path[clip]
+   - \draw[clip], \path[draw, clip]
+** Key-Value Syntax for Graphic Parameters(图形参数键值语法)
+   - color=red, 键值对
+   - \tikz \draw[line width=2pt,color=red] (1,0) -- (0,0) -- (0,1) --
+     cycle;
+** Special Syntax for Specifying Nodes(定义节点特殊语法)
+   - \tikz \draw (1,1) node {text} -- (2,2); 在几何点(1,1)上定义了一个
+     节点，并在该节点上显示文字text，然后继续绘制了一个从(1,1)到(2,2)的
+     直线。
+   - \tikz \draw (1,1) node[circle, draw] {text} -- (2,2); 在定义节点时，
+     加上动作，绘制圆。
+   - node[circle](name){text}; 定义一个节点，并附上name为节点名称。
+** Special Syntax for Specifying Trees(定义树的特殊语法)
+   - node 后面可以跟上任意数量子节点，使用关键字 child；
+** Special Syntax for Graphs(图的特殊语法)
+   - grpah语法画图，这些节点只在名称上有区别；
+** Grouping of Graphic Parameters(图参数群)
+   - {scope}里面的参数相同；
+** Coordinate Transformation System(坐标转换)
+   - PGF转换
+* 12. Hierarchical Structures(层次结构)
+** 12.1 Loading the Package and the Libraries(加载宏包和库)
+   - \usepackage{tikz}
+   - \usetikzlibrary{<list of libraries>}：用逗号隔开库名
+   - \usetikzlibrary{arrows.meta}
+   - 加载 tikzlibrary<library>.code.tex 文件
+   - 加载 pgflibrary<library>.code.tex 文件
+** 12.2 Creating a Picture(生成图)
+*** tikzpicture环境
+   - 选项改变行为
+   - \tikzset命令放在环境之外使用
+   - /tikz/every picture: 风格
+   - every picture/.style = {line width=1pt}
+*** \tikz命令
+    - \tikz[选项]{<路径命令>}
+    - 若路径命令就1条，就可以省略外面大括号
+*** Handling Catcodes and the Babel Package(处理连字码和babel包)
+    - \usetikzlibrary{babel} 处理连字码
+*** 背景
+    - \usetikzlibrary{backgrounds} 增加背景
+** 12.3 Using Scopes to Structure a Picture(用域构造图)
+*** scope环境
+    - scope环境设置参数作用域
+*** scope环境简写
+    - \usetikzlibrary{scopes}
+    - 大括号形成一个域，加上[]定义选项
+*** scope命令
+    - \scoped[选项] 命令
+*** 路径中用域
+    - 用大括号在路径中定义域
+** 12.4 Using Graphic Options(使用图形选项)
+*** 12.4.1 How Graphic Options Are Processed
+   - \tikzset{<选项>}
+   - \pgfkeys命令处理选项
+   - 若为全键（以\开头），则同于82节；
+   - 检查是否为 /tikz/<key>，并处理；
+   - 检查是否为 /pdf/<key>，并处理；
+   - 检查是否color，并处理；
+   - 检查是否有dash，若有，则用arrows=<key>处理；
+   - 检查是否有shape，若有，则用shape=<key>处理。
+*** 12.4.2 Using Styles to Manage How Pictures Look(用风格改变)
+    - my style/.style={<选项>} 
+* 13. Specifying Coordinates(定义坐标)
+* 14. Syntax for Path Specifications(路径定义)
+* 15. Actions on Paths(路径动作)
+* 16. Arrows(箭头)
+* 17. Nodes and Edges(节点和边)
+* 22. Plots of Functions(函数绘制)
+* 23. Transparency(透明)
+* 24. Decorated Paths(装饰路径)
+* 25. Transformations(变换)
+* 82. Key Management(键管理)

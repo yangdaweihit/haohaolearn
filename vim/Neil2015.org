@@ -1,0 +1,173 @@
+
+** ch1 The Vim Way(Vim之道)
+*** Tip1: Meet the Dot Command
+    - :help .
+    - 重复上次改变
+*** Tip2: Don’t Repeat Yourself
+    - 场景：在每一行尾加分号
+    - 方案一
+      - $a;  至行尾加;
+      - j$. 至下一行尾重复上一个加;动作
+    - 方案二
+      - A;<ESC>
+      - j.
+    - 该场景在Tip30会有更好的解决方案
+*** Tip3: Take One Step Back, Then Three Forward
+    - 场景：将同行中的+两端加上空格
+    - f+
+    - s +
+    - ;.
+*** Tip4: Act, Repeat, Reverse
+    - 动作原则：可重复、可返回
+    - @: 重复Ex命命令，见 ~Tip65~
+    - & 重复上一次搜索，见 ~Tip93~
+    - First act and then repeat
+    - 可用 ~,~ 键重复上一次 ~f{char}~ ，见 ~Tip50~
+* Part1 Modes
+** Ch2 Normal Mode
+*** Tip7: Pause with Your Brush Off the Page
+    - The meaning of Normal mode
+*** Tip8: Chunk Your Undos
+    - ~u~ reverts the last change
+    - 
+*** Tip9: Compose Repeatable Changes
+*** Tip10: Use Counts to Do Simple Arithmetic
+*** Tip11: Don’t Count If You Can Repeat
+    - d2w, 2dw, dw.
+    - dw. dw可返回可重复
+*** Tip12: Combine and Conquer
+**** Operator + Motion = Action
+     - d{motion}: dl, daw, dap
+     - c{motion}, y{motion}
+     - g~, gu, gU
+     - when an operator is invoked in duplicate, it acts upon the
+       current line: dd, gUgU == gUU
+**** Extending Vim’s Combinatorial Powers
+     - gc: comment command
+** Ch3 Insert Mode
+** Ch4 Visual Mode
+*** Tip20: Grok Visual Mode
+*** Tip21: Define Visual Selection
+**** Enabling Visual Modes
+     | Command | Effect                              |
+     |---------+-------------------------------------|
+     | v       | Enabling character-wise Visual mode |
+     | V       | Enabling line-wise Visual mode      |
+     | <C-v>   | Enabling block-wise Visual mode     |
+     | gv      | Reselect the last visual selection  |
+**** Switching Between Visual Modes
+     | Command   | Effect                              |
+     |-----------+-------------------------------------|
+     | v,V,<C-v> | Switch to respective mode           |
+     | o         | Go to other end of highlighted text |
+**** Toggling the Free End of a Selection
+     | Command   | Effect                              |
+     |-----------+-------------------------------------|
+     | o         | Go to other end of highlighted text |
+*** Tip22: Repeat Line-Wise Visual Commands 
+    - Vj 选择当前行和下一行
+    - >. 缩进并再重复一次
+*** Tip23: Prefer Operators to Visual Commands Where Possible 
+    - vitU (Visual Mode) vs. gUit (Normal Mode)
+** Ch5 Command-Line Mode 
+*** Tip27: Meet Vim’s Command Line
+    - ~:~ switches into Command-Line mode
+      | Command                                       | Effect                                                                          |
+      |-----------------------------------------------+---------------------------------------------------------------------------------|
+      | :[range]delete[x]                             | Delete specified lines [into register x]                                        |
+      | :[range]yank [x]                              | Yank specified lines [into register x]                                          |
+      | :[line]put [x]                                | Put the text from register x after the specified line                           |
+      | :[range]copy {address}                        | Copy the specified lines to below the line specified by {address}               |
+      | :[range]move {address}                        | Move the specified lines to below the line specified by {address}               |
+      | :[range]join                                  | Join the specified lines                                                        |
+      | :[range]normal {commands}                     | Execute Normal mode {commands} on each specified line                           |
+      | :[range]substitute/{pattern}/{string}/[flags] | Replace occurrences of {pattern} with {string} on each specified line           |
+      | :[range]global/{pattern}/[cmd]                | Execute the Ex command [cmd] on all specified lines where the {pattern} matches |
+**** Ex Commands Strike Far and Wide
+     - Normal commands tend to act on the current character or the
+       current line.
+     - the greatest feature that distinguishes Ex commands is their
+       ability to be executed across many lines at the same time.
+*** Tip28: Execute a Command on One or More Consecutive Lines
+    - [range] lines to act upon
+    - We can specify the start and end of a range with either a line
+      number, a mark, or a pattern.
+    - One of the strengths of Ex commands is that they can be executed
+      across a range of lines.
+**** Use Line Numbers as an Address
+     - If we enter an Ex command consisting only of a number, then Vim
+       will interpret that as an address and move our cursor to the
+       specified line.
+     - ~:1p~ print the first line
+     - ~:$p~ print the last line
+     - ~:3d~ delete the 3rd line
+**** Specify a Range of Lines by Address
+     - ~:2,5p~ print each line from 2 to 5
+     - ~:.,$p~ print each line from here to the end of the file
+     - ~:%p~  print all lines, The % symbol stands for all the lines
+**** Specify a Range of Lines by Visual Selection
+     - {visual} + {Command Line}
+     - ~2G~ ~VG~ select with visual mode
+     - ~:'<,'>{motion}~ 
+**** Specify a Range of Lines by Patterns
+     - :/partern1,/partern2 {motion}
+**** Modify an Address Using an Offset
+     - :/partern1+n,/partern2 {motion}
+*** Tip29: Duplicate or Move Lines Using ‘:t’ and ‘:m’ Commands
+    - The :copy command (and its shorthand :t ) lets us duplicate one or
+      more lines from one part of the document to another, while the
+      :move command lets us place them somewhere else in the document.
+**** Duplicate Lines with the ‘:t’ Command
+     - :[range]copy {address}
+     - ~:t~ ~:co~ ~:copy~
+**** Move Lines with the ‘:m’ Command
+     - :[range]move {address}
+*** Tip30: Run Normal Mode Commands Across a Range
+    - :normal +{motion}
+    - :%normal A;  add ; at the end of all lines
+    - :%normal i// comment all lines of JavaScript
+*** Tip31: Repeat the Last Ex Command
+    - ~@:~ repeat ex command
+*** Tip32: Tab-Complete Your Ex Commands
+    - The <C-d> command asks Vim to reveal a list of possible
+      completions
+    - <Tab> to autocomplete commands
+**** Choosing from Multiple Matches
+     - <Tab> <C-n> or <Right>
+     - <S-Tab> <C-p> or <Left>
+*** Tip33: Insert the Current Word at the Command Prompt
+    
+* Part2 Files
+
+* Part3 Getting Around Faster
+** Ch8 Navigate Inside Files with Motions
+*** Tip47: Keep Your Fingers on the Home Row 
+    - :help motion.txt
+      | Command | Move cursor      |
+      |---------+------------------|
+      | h       | One column left  |
+      | l       | One column right |
+      | j       | One line down    |
+      | k       | One line up      |
+*** Tip47: Distinguish Between Real Lines and Display Lines
+    | Command | Move cursor           |
+    |---------+-----------------------|
+    | j       | Down one real line    |
+    | gj      | Down one display line |
+    | k       | Up one real line      |
+    |         |                       |
+    |         |                       |
+    |         |                       |
+    |         |                       |
+    |         |                       |
+    |         |                       |
+    |         |                       |
+    
+** Ch9 Navigate Between Files with Jumps
+*** Tip56: Traverse the Jump List
+
+* Part4 Registers
+
+* Part5 Patterns
+
+* Part6 Tools 

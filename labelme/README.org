@@ -1,0 +1,30 @@
+* Labelme
+
+- [[https://github.com/wkentaro/labelme][Labelme]]是一个图像标记工具，用Python和Qt编写。
+
+
+** 安装
+
+*** Windows
+
+安装Anaconda后，执行如下步骤：
+
+#+BEGIN_SRC 
+conda create --name=labelme python=3.6
+source activate labelme
+pip install labelme
+#+END_SRC
+
+
+*** Ubuntu 
+
+#+BEGIN_SRC 
+# Ubuntu 14.04 / Ubuntu 16.04
+# Python2
+# sudo apt-get install python-qt4  # PyQt4
+sudo apt-get install python-pyqt5  # PyQt5
+sudo pip install labelme
+# Python3
+sudo apt-get install python3-pyqt5  # PyQt5
+sudo pip3 install labelme
+#+END_SRC

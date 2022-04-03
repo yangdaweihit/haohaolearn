@@ -1,0 +1,30 @@
+* Pycharm
+
+** 安装
+
+[[https://www.jetbrains.com/pycharm/?fromMenu][pycharm]] 是一款优秀的python开发集成环境软件，建议初学python使用pycharm作
+为练习的环境。操作详见[[<https://www.jetbrains.com/help/pycharm/meet-pycharm.html>][帮助系统]]。
+
+- Deiban:
+
+#+BEGIN_ASCII
+sudo snap install pycharm-community --classic
+#+END_ASCII
+
+有时会在Pycharm编辑中笔记本会发出beep声，可以关掉：
+#+BEGIN_ASCII
+ sudo rmmod pcspkr
+#+END_ASCII
+
+- Windows:
+
+下载[[http://www.jetbrains.com/pycharm/download/#section=windows][安装包 ]]，然后著名的下一步。这里还有一个关于安装的[[http://www.runoob.com/w3cnote/pycharm-windows-install.html][教程]]。 注意，选择
+Community版本即可。
+
+** 快捷键
+
+在操作中宜使用快捷键提高编辑和调试效率。
+
+- C-S-F10: 运行
+- C-/：注释
+- C-S-M l: 格式化代码

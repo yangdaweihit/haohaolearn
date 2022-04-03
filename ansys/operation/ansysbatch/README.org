@@ -1,0 +1,9 @@
+* 说明
+
+程序为Python调用Ansys的程序示例
+
+** Linux
+   - ANSYS版本: 19.0
+
+** Windows
+   - ANSYS版本：17.0

@@ -1,0 +1,57 @@
+* 安装
+  - 系统：Debian/Linux Bullseye
+  - 版本：ANSYS 2020R1
+** 依赖：
+    #+begin_src 
+    sudo apt-get install libmotif-dev libxtst-dev  libxt-dev libzip-dev libxmu-dev libpng-dev 
+    sudo apt-get install wine64
+    sudo rm /usr/bin/sh
+    sudo ln -s /usr/bin/bash /usr/bin/sh
+    #+end_src
+** 加载镜像
+   #+begin_src 
+   sudo mkdir mnt1
+   sudo mkdir mnt2
+   sudo mount ANSYS2020R1_LINX64_Disk1.iso /mnt
+   sudo mount ANSYS2020R1_LINX64_Disk2.iso /mnt1
+   sudo mount ANSYS2020R1_LINX64_Disk3.iso /mnt2
+   #+end_src
+** 安装
+   #+begin_src 
+   sudo ./INSTALL
+   #+end_src
+* 配置
+** 路径
+   #+begin_src 
+   sudo vi /etc/environment
+   PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/ansys_inc/v201/ansys/bin
+   #+end_src
+** 动态链接程序
+    #+begin_src 
+    sudo ln -s /ansys_inc/v201/Electronics/Linux64/defer/libXp.so.6 /usr/lib/x86_64-linux-gnu/libXp.so.6
+    #+end_src
+** 窗口启动
+    #+begin_src 
+    sudo vi /usr/bin/ansysg
+    
+    #! /bin/bash
+    #
+    unset XMODIFIERS
+    unset GTK_IM_MODULE
+    unset QT_IM_MODULE
+    unset QT4_IM_MODULE
+    unset CLUTTER_IM_MODULE
+
+    /usr/ansys_inc/v201/ansys/bin/ansys201 -g
+
+    export XMODIFIERS="@im=fcitx"
+    export GTK_IM_MODULE=fcitx
+    export QT_IM_MODULE=fcitx
+    export QT4_IM_MODULE=fcitx
+    export CLUTTER_IM_MODULE=xim
+    #+end_src
+** 启动器
+   #+begin_src 
+   launcher
+   #+end_src
+   

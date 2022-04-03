@@ -1,0 +1,300 @@
+#+TITLE: 《Pro Git》笔记
+
+- 作者：Scott Chacon 和 Ben Straub
+- 出版：Apress
+  
+* 1. 起步
+** 1.1 关于版本控制
+- VCS: version control system，版本控制系统。
+
+** 1.2 简史
+- 在Bitkeeper不再免费提供代码托管服务后，为了解决全世界Linux开发者协同工
+  作的问题，Linus Torvalds于2005年4月花了三个星期开发出的世界上最优秀的
+  版本控制系统。
+
+** 1.3 基础概念
+- Git与其它版本控制系统差异
+  + 其它：记录每个文件的差异。
+  + Git: 每个版本形成一个快照，形成快照流。
+- 本地操作
+  + 所有历史都记录在本地，可离线完成所有操作。
+- 完整性
+  + 校验和(checksum)机制计算SHA-1哈希值。
+  + 存储信息使用哈希值，而不是文件名。 
+- 三种状态
+  + 已提交（committed）：存在于仓库目录(.git)。
+  + 已修改（modified）：存在于工作目录(working directory)。
+  + 已暂存（staged）: 存在于暂存区域(staging area)。
+
+** 1.6 配置
+- 配置文件
+  + /etc/gitconfig: 系统配置文件
+  + ~/.gitconfig: 本地配置文件
+  + .git/config: 当前仓库git目录中的配置文件
+- 用户信息
+  + git config --global user.name "John Doe"
+  + git config --global user.email johndoe@example.com
+- 编辑器
+  + git config --global core.editor emacs
+- 检查配置信息
+  + git config --list
+  + git config <key>
+
+** 1.7 获取帮助
+- git help <verb>
+- git <verb> --help
+- man git-<verb>
+
+* 2. Git基础
+** 2.1 获得一个仓库
+   - 在既有目录下初始化仓库
+     + git init
+   - 克隆既有仓库
+     + git clone https://github.com/libgit2/libgit2
+
+** 2.2 记录仓库变化
+   - 文件状态：追踪、未追踪
+   - 追踪文件：未修改、修改、暂存
+   - 检查文件状态
+     + git status
+   - 跟踪新文件
+     - git status
+   - 暂存文件
+     - git add <files>
+   - 状态简览
+     - git status -s
+   - 忽略文件
+     - .gitignore文件列出要忽略的文件
+   - 查看已暂存和未暂存的修改
+     - git diff: 比较修改之后还没有暂存起来的变化内容
+   - 提交更新
+     - git commit -m <msg>
+   - 跳过使用暂存区域
+     - git commit -m -a <msg>: 自动暂存已跟踪文件并提交
+   - 移除文件
+     + git rm <file>: 从暂存区和工作区中删除文件，文件不再被git管理
+     + git rm --cached <file>: 从仓库中删除，即从暂存区删除，仍保留在工
+       作目录中。 
+   - 移动文件
+     + git mv file_from file_to
+
+** 2.3 查看提交历史
+   - git log：不用参数时，按提交时间列出所有的更新，最近的更新排在最上面。
+     列出每个提交的 SHA-1 校验和、作者的名字和电子邮件地址、提交时间以及
+     提交说明。
+   - git log -p -2: 显示每次的提交差异，显示最近2次提交。
+   - git log --stat: 显示提交的统计信息。
+   - git log --pretty=[子选项]: 按特定格式显示提交历史。
+     + oneline: 每个提交在一行内显示
+     + short, full, fuller: 展示不同程度的信息
+     + format:"...": 自定义格式
+   - git log --graph: 用ASCII字符串展示分支、合并历史
+   - git log --since=2.weeks: 显示近2周提交
+   - git log -S<function_name>: 添加或删除了某个关键字的提交
+   - git log -- <dir path>: 只显示某些文件或者目录的历史提交
+
+** 2.4 撤销操作
+*** 重新提交
+    - git commit --amend
+#+BEGIN_SRC 
+git commit -m 'initial commit'
+git add forgotten_file
+git commit --amend
+#+END_SRC
+    - 补充上的文件填加上到本次提交中，并不改变快照。
+*** 取消暂存的文件
+    - 误将文档暂取后需要取消暂取
+    - git reset HEAD <file>... 
+*** 撤消对文件的修改
+    - git checkout -- <file>
+    - 这是一个很危险的动作，将git仓库中的文件检出覆盖已修改文件
+
+** 2.5 远程仓库使用
+*** 查看远程仓库
+    - git remote -v
+*** 添加远程仓库
+    - git remote add <shortname> <url>
+*** 从远程仓库中抓取与拉取
+    - git fetch [remote-name]
+*** 推送到远程仓库
+    - git push [remote-name] [branch-name]
+*** 查看远程仓库
+    - git remote show [remote-name] 
+*** 远程仓库的移除与重命令
+    - git remote rename pb paul
+    - git remote rm paul
+
+** 2.6 打标签
+*** 列出标签
+    - git tag
+    - git tag -l 'v1.8.5*'
+*** 创建标签
+    - Git 使用两种主要类型的标签：轻量标签（lightweight）与附注标签
+      （annotated）。
+    - 一个轻量标签很像一个不会改变的分支 - 它只是一个特定提交的引用。
+*** 附注标签
+    - git tag -a v1.4 -m 'my version 1.4'
+    - -m 选项指定了一条将会存储在标签中的信息。
+*** 轻量标签
+    - git tag v1.4-lw
+    - git show v1.4-lw: 显示该分支信息
+*** 后期打标签
+    - git log --pretty=oneline
+    - git tag -a v1.2 9fceb02
+*** 共享标签
+    - 默认情况下，git push 命令并不会传送标签到远程仓库服务器上。
+    - git push origin [tagname]
+    - git push origin --tags: 把所有不在远程仓库服务器上的标签全部传送到
+      那里。
+*** 删除标签
+    - git tag -d v1.4-lw
+    - git push <remote> :refs/tags/<tagname> : 从远程库中删除标签
+*** 检出标签
+    - git checkout 2.0.0
+    - 危险没看懂
+
+* 3. 分支
+** 3.1 分支简介
+   - 分支模型是git必杀技特性。
+   - 每创建一个分支，就是创建一个可以移动的新指针。
+   - 当前所在分支是有一个HEAD指针指向了当前分支的指针。
+   - 由于 Git 的分支实质上仅是包含所指对象校验和（长度为 40 的 SHA-1
+     值字符串）的文件，所以它的创建和销毁都异常高效。 创建一个新分支就
+     相当于往一个文件中写入 41 个字节（40 个字符和 1 个换行符）。
+
+** 3.2 分支新建和合并
+*** 建立新分支
+    - git branch testing
+    - HEAD指针指向的分支为当前分支
+    - git log --oneline --decorate： 显示HEAD所指向的分支
+*** 切换分支
+    - git checkout testing
+** 3.3 分支管理
+   - git branch 不加参数显示所有分支列表
+   - git branch -v 查看每一个分支的最后一次提交
+   - git branch --merged 显示当分支合并了哪些分支
+   - git branch --no-merged 显示还有哪些分支尚未合并到当前分支
+   - git branch -d [分支名] 将[分支名]所指的分支删除
+   - git branch -D [分支名] 将[分支名]所指的分支强制删除
+** 3.4 分支开发工作流
+   - 长期分支
+   - 特性分支
+   - 更多工作流在分布式Git中
+** 3.5 远程分支 
+   - 远程引用是对远程仓库的引用（指针），包括分支、标签等等。
+   - git remote 显示远程仓库
+   - 远程仓库的默认名为 origin
+*** 跟踪分支
+   - 远程跟踪分支：[remote]/[branch]，上一次连接到远程仓库时分支所处状态的标签。
+   - git push [remote] [branch] 将分支[branch]推送到[remote]仓库中的[branch]分支上。
+   - git push origin [branch]:[branch] 将本地[branch]分推送到
+     [brach]上，并成为[branch]分支。
+   - git push origin [branch1]:[branch2] 将本地[branch1]分推送到
+     [origin]上，并成为[branch2]分支。
+   - 从一个远程跟踪分支检出一个本地分支会自动创建所谓的 “跟踪分
+     支”（它跟踪的分支叫做 “上游分支”）。
+   - 如果在一个跟踪分支上输入 git pull，Git 能自动地识别去哪个服务器上
+     抓取、合并到哪个分支。
+   - 当克隆一个仓库时，它通常会自动地创建一个跟踪 origin/master 的
+     master 分支。
+   - git checkout -b [branch] [remotename]/[branch]  建立一个跟踪分支
+   - git checkout --track origin/serverfix  建立serverfix跟踪分支的快捷方式
+   - git checkout -b sf origin/serverfix 建立了一个不同的名字的跟踪分
+     支，现在分支sf会自动从origin/serverfix拉取。
+   - git branch -u origin/serverfix 设置已有的分支跟踪一个刚刚拉取下来
+*** 下拉
+    - git pull = git fectch + git merge
+*** 删除远程分支
+    - git push origin --delete serverfix
+** 3.6 变基
+   将一个分支集成到另一个分支有两种方法：合并和变基。
+*** 变基的基本操作 
+    - 合并是将两个分支的最近快照和二者最近的共同祖先进行三方合并，生成一
+      个新的快照。
+    - 另一个方式为变基：提取一个分支的补丁，应用在当前分支上，这种操作为
+      变基。
+#+BEGIN_SRC 
+ git checkout experiment #首先找到当前分支
+ git rebase master #变基操作的基底分支为master
+ git checkout master #回到master分支
+ git merge experiment #进行一次快进合并
+#+END_SRC
+*** 更有趣的变基例子
+#+BEGIN_SRC 
+ git rebase --onto master server client # 将client变基到master上，但不含
+ server的修改
+ git checkout master # 切换到master上
+ git merge client # 快进合并
+ git rebase master server  # 将server变基到master上
+ git checkout master # 切换到master
+ git merge server  # 快进合并到master
+ git branch -d client # 删除client分支
+ git branch -d server # 删除server分支
+#+END_SRC
+*** 变基的风险
+    - 不要对在你的仓库外有副本的分支执行变基。
+    - 解释：当带有分支的仓库被做了克隆后，即为仓库外有副本的分支。若对这
+      样的分支做了变基，即切掉了某些分支，则仓库外再次推送时，将恢复这些
+      分支。这会使得明明被抛弃的分支再次出现。从而造成混乱。
+*** 变基原则
+    - 只对尚未推送或分享给别人的本地修改执行变基操作清理历史，从不对已推
+      送至别处的提交执行变基操作，这样，你才能享受到两种方式带来的便利。
+      
+* 4. 服务器上的Git
+** 4.1 协议
+   一个远程仓库通常只是一个裸仓库（bare repository）— 即一个没有当前工作
+   目录的仓库。简单的说，裸仓库就是你工程目录内的 .git 子目录内容，不包
+   含其他资料。
+** 4.2 在服务器上搭建 Git 
+** 4.3 生成 SSH 公钥
+** 4.4 配置服务器
+** 4.5 Git 守护进程
+** 4.6 Smart HTTP
+** 4.7 GitWeb
+** 4.8 GitLab
+** 4.9 第三方托管的选择
+* 5. 分式布
+** 5.1 分布式工作流程
+** 5.2 向一个项目贡献
+** 5.3 维护项目
+* 6. GitHub
+* 7. Git工具
+** 7.14 凭证存储
+- Credential，即凭证。用来在本地存储用户名和密码，使得用户使用HTTP协义
+  时免于输入用户名和密码。
+- Git有一个所谓凭证系统的工具：
+  + 默认情况下，需要用户输入用户名和系统，即无缓存模式。
+  + “cache” 模式会将凭证存放在内存中一段时间。 密码永远不会被存储在磁
+    盘中，并且在15分钟后从内存中清除。缓冲时间还可以人为修改。
+#+BEGIN_SRC 
+git config --global credential.helper cache
+#+END_SRC
+  + “store” 模式会将凭证用明文的形式存放在磁盘中，并且永不过期。 这意
+    味着除非你修改了你在 Git 服务器上的密码，否则你永远不需要再次输入你
+    的凭证信息。 这种方式的缺点是你的密码是用明文的方式存放在你的 home
+    目录下。
+#+BEGIN_SRC 
+git config --global credential.helper store
+#+END_SRC
+
+- "cache"模式
+  + --timeout <seconds>
+    设置后台进程的存活时间。
+  + 实际操作
+    1. 设置缓冲模式: git config --global credential.helper cache
+    2. 正常执行下拉或推送，输入用户名和密码。Git系统将在存活时间内记住该
+       凭证信息。
+  
+- "store"模式
+
+  + --file <path>
+    明文文件默认为~/.git-credentials，也可以定义为其它文件。
+
+  + 凭证信息格式
+    * 用户名：密码@宿主位置
+    * https://bob:s3cre7@mygithost
+    * 一般宿主位置为：github.com
+
+  + 实际操作
+    1. 建立一个凭证明文文件，如.git-credentials。输入凭证信息：如https://bob.s4cre7@mygithost
+    2. 设置凭证模式：git config --global credential.helper store 

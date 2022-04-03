@@ -1,0 +1,49 @@
+* Learning GIMP 
+** Getting Started
+*** GIMP Basics
+    - C-q 退出
+    - TAB 切换窗口显示
+    - ToolBox + Options
+*** Image Handling Basics
+    - Windows > Single-Window mode   所有窗口形成一个窗口
+    - View > Fullscreen  F11
+    - Ctrl + 鼠标中轮  放大缩小
+    - 1,2... 放大倍数
+    - z 鼠标选择区域放大
+    - C-S-e 存为多种格式
+    - C-S-s 保存
+    - C-s 保存
+*** Working with Images
+    - C-z undo
+    - C-y redo
+    - Resizing an Image
+      + Image > Scale Image
+      + Image: Filters > Enhance > Unsharp Mask
+    - Cropping an Image
+      - S-c
+      - ENTER
+    - Adding a Frame with Filters
+    - Using Layers
+   
+** Photograph Retouching
+*** Tutorial: Enhancing Badly
+    - S-m 度量
+    - Check Use info window
+    - S-r 旋转
+    - S-p
+    - Correcting Exposure
+      - Image: Colors > Levels
+      - C-S-d 复制图层  --> 将图层模式改为 screen mode --> 改变透明度
+    - Removing an Object
+      - c 克隆
+      - Ctrl 源点点击  释放 点击
+*** Global Transformations
+    -
+** Selections
+   - r 矩形选择
+   - C-c C-v 复制 粘贴
+   - C-S-n  New Layer
+   - u 模糊选择
+** Masks
+
+

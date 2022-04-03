@@ -1,0 +1,13 @@
+* Shortcuts
+
+| operation                         | shortcuts          |
+|-----------------------------------+--------------------|
+| open a new page and skip to it    | Ctrl + t           |
+| reopen the last closed page       | Ctrl + Shift + t   |
+| skip to the next page             | Ctrl + Tab         |
+| skip to the last page             | Ctrl + Shift + Tab |
+| open homepage at the current page | Alt + Home         |
+| close the current page            | Ctrl + w           |
+
+** reference
+   - [[https://www.runoob.com/w3cnote/google-chrome-shortcuts.html][Chrome浏器快捷键]]

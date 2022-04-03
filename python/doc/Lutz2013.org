@@ -1,0 +1,51 @@
+#+TITLE: Learning Python
+#+AUTHOR: Mark Lutz
+
+* Ch.16: Function Basics
+** A Second Example
+*** Calls
+- p.482: single list comprehension expression 
+  - arugment passing modes
+*** Polymorphism Revisited
+- p.482: operator overloading techniques 
+  - support *for* and *in*
+* Ch.17: Scopes
+- overuse of globals is generally a bad thing;
+- on the plus side, retain state information between function calls;
+- an alternative to class in some roles.
+** Python Scope Basics
+*** Scope Details
+- what is *enclosing function*, *built-ins*
+*** Name Resolution: The LEGB Rule
+- Local -> Enclosing defs & lambda -> Global -> Built-in
+** The global Statement
+- *global* statement is namespaces delcaration.
+- The global statement consists of the keyword global , followed by one or more
+  names separated by commas.
+- *Summary*
+  - Global names are variables assigned at the top level of the enclosing module file.
+  - Global names must be declared only if they are assigned within a function.
+  - Global names may be referenced within a function without being declared.
+*** Program Design: Minimize Global Variables
+*** Program Design: Minimize Cross-File Changes
+** Scopes and Nested Functions
+   - Factory Functions: Closures[工厂函数和闭包]
+     - 返回内嵌函数，用到了调用变量
+** The nonlocal Statement in 3.X
+   - 将值传给上最近的局部变量
+   - 不知道为什么要有这个语句
+* Ch.18: Arguments
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+* Debug 
+
+** 参照
+- [[https://docs.python.org/3/library/pdb.html][pdb文档]]
+- [[https://realpython.com/python-debugging-pdb/][Python Debugging With Pdb]]
+- [[https://pybit.es/pdb-debugger.html][用pdb调试代码]]
+- [[https://www.jianshu.com/p/1c2212fc28a6][Python调试利器详解]]
+
+** realgud:pdb
+    realgud是Emacs的一个插件，用来与外部调试工具交互。安装和启动参见：[[https://github.com/realgud/realgud][realgud]]。
+*** 安装
+    - M-x *package-install* RET *realgud* RET 
+*** 加载和卸载
+    - M-x *load-library* RET *realgud* RET
+    - M-x *realgud-unload-features*
+*** 启动调试工具
+    - M-x *realgud:pdb*
+    - 启动调试工具后，RealGUD打开两个窗口：命令窗口和源码窗口。
+    - 一个实心三角箭头提示源码窗口中的当前行。灰色箭头提示前一个位置。
+*** 使用调试工具
+    - 在命令窗口中和所有调试命令执行方式是一样的。如*n RET*向前y执行一步。
+    - RealGUD的威力在于源码窗口，大多数调试动作依旧有效。
+*** 源码窗口命令
+    一个键的模式，称为短键模式。
+   | 命令              | 动作                     |
+   |-------------------+--------------------------|
+   | n                 | 下一步(step over)        |
+   | s                 | 进一步(step into )       |
+   | f                 | 结束(step out)           |
+   | c                 | 继续至下一断点(continue) |
+   | b                 | 设置断点                 |
+   | D                 | 清除断点                 |
+   | mouse-2(鼠标中键) | 观测变量                 |
+   | e                 | 计算表达式               |
+   | q                 | 退出                     |
+   | R,r               | 执行(restart)            |
+   | S                 | 跳至命令窗口             |
+   
+   - 在minibuffer中：M-x python3 -m pdb myscipt.py
+   - [[https://github.com/realgud/realgud/wiki/How-to-Use#supported-debuggers][use realgud]]
+   - [[https://github.com/realgud/realgud/issues/211][No Module Error]]
+
+- pp: 打印当前量的值
+
+
+
+

@@ -1,0 +1,384 @@
+* PART I: Basic and Advanced vi
+** Ch1 The vi Text Editor
+** Ch2 Simple Editing
+*** Moving the Cursor
+**** Single Movements
+
+     | 键 | 功能     |
+     |----+----------|
+     | h  | 左移一步 |
+     | j  | 下移一行 |
+     | k  | 上移一行 |
+     | l  | 右移一步 |
+
+**** Numeric Arguments
+	 - ~4l~ 在动作命令前加数字，表示执行数次动作
+	 - [n]h  表示左移n步
+
+**** Movement Within a Line 
+
+     | 键 | 功能       |
+     |----+------------|
+     | 0  | 移动至行首 |
+     | $  | 移动至行尾 |
+
+**** Movement by Text Blocks
+
+     | 键   | 功能                             |
+     |------+----------------------------------|
+     | [n]w | 移动至下一个词，符号或标点符计入 |
+     | [n]W | 移动至下一个词，符号或标点符不计 |
+     | [n]G | 移至第n行                        |
+     | G    | 移至最后一行                     |
+
+*** Simple Edits
+**** Inserting New Text
+
+
+      | 键 | 功能                 |
+      |----+----------------------|
+      | i  | 在当前位置前插入新字 |
+      | I  | 在当前行首前插入新字 |
+
+**** Appending Text
+
+      | 键 | 功能                 |
+      |----+----------------------|
+      | a  | 在当前位置后插入新字 |
+      | A  | 在当前行尾插入新字   |
+
+**** Changing Text
+***** 词
+
+      | 键  | 功能         |
+      |-----+--------------|
+      | cw  | 改到字尾     |
+      | c2b | 改到前两个词 |
+      | c$  | 改到行尾     |
+      | c0  | 改到行首     |
+
+***** 行
+
+      | 键 | 功能         |
+      |----+--------------|
+      | cc | 替代整行文字 |
+      | C  | 替代至行尾   |
+
+***** 字母
+
+      | 键 | 功能         |
+      |----+--------------|
+      | r  | 替代当前字母 |
+
+***** Substituting text
+
+      | 键 | 功能                          |
+      |----+-------------------------------|
+      | s  | 替换当前字母                  |
+      | S  | 替换当前行                    |
+      | R  | 替换后面所有位置，直至ESC退出 |
+
+**** Changing Case
+
+      | 键 | 功能       |
+      |----+------------|
+      | ~  | 改变大小写 |
+
+**** Deleting Text
+***** Words
+
+
+       | 键 | 功能                   |
+       |----+------------------------|
+       | d  | 删除接下来指定范围的词 |
+       | dw | 删除当前词             |
+
+***** Lines
+
+
+       | 键    | 功能                |
+       |-------+---------------------|
+       | [n]dd | 删除含当前行以下n行 |
+       | D     | 删除当前位置至行尾  |
+
+***** Characters
+	 
+
+       | 键 | 功能               |
+       |----+--------------------|
+       | x  | 删除一个字符       |
+       | X  | 删除当前位置前字符 |
+
+**** Moving Text
+
+     | 键 | 功能                             |
+     |----+----------------------------------|
+     | p  | 将缓存中的内容置于当前位置之后   |
+     | xp | 交换当位字符与后一个字符         |
+     |    | 删除当前字符后置于后一个字符之后 |
+
+**** Copying Text
+
+
+     | 键 | 功能                           |
+     |----+--------------------------------|
+     | y  | 将缓存中的内容置于当前位置之后 |
+
+**** Repeating or Undoing You Last Command
+
+     | 键  | 功能                    |
+     |-----+-------------------------|
+     | .   | 重复上一次命令          |
+     | u   | Undo                    |
+     | U   | Undo当前行操作          |
+     | C R | vim命令redo一个Undo操作 |
+	
+*** More Ways to Insert Text
+   
+    - 以下命令均转换至插入模式
+
+      | 键        | 功能                   |
+      |-----------+------------------------|
+      | I         | 在当前行首插入新字     |
+      | A         | 在当前行尾插入新字     |
+      | o         | 在当前位置下开新空白行 |
+      | O         | 在当前位置上开新空白行 |
+      | s = c SPC | 删除当前位置字符替换   |
+      | S = cc    | 删除当前位行替换       |
+      | R         | 覆盖当前字符           |
+
+**** Numeric Arguments for Insert Commands
+	
+	 - 除了o和O之外，上述插入命令均可带有数字前缀。
+	 - ~50i*~ 插入50个*号
+	 - ~2r&~ 将含当前位置的两个位置换成&
+	 - 
+
+*** Joining Two Lines with J
+
+     | 键 | 功能       |
+     |----+------------|
+     | J  | 连接下一行 |
+     | J. | 连接下两行 |
+     | 3J | 连接下三行 |
+
+** Ch3 Moving Around in a Hurry
+*** Movement by screens
+**** Scrolling the Screen
+	
+     | 键 | 功能             |
+     |----+------------------|
+     | ^F | 向前(下)滚动一屏 |
+     | ^B | 向回(上)滚动一屏 |
+     | ^D | 向前滚动半屏     |
+     | ^U | 向回滚动半屏     |
+	
+**** Repositioning the Screen with z
+
+     | 键    | 功能                   |
+     |-------+------------------------|
+     | z RET | 移动当前行到屏顶并滚动 |
+     | z.    | 移动当前行为屏中并滚动 |
+     | z-    | 移动当前行为屏底并滚动 |
+
+**** Redrawing the Screen
+     - ^L 
+
+**** Movement Within a Screen
+
+     | 键 | 功能     |
+     |----+----------|
+     | H  | 回到屏头 |
+     | M  | 回到屏中 |
+     | L  | 回到屏底 |
+
+**** Movement by Line
+
+     | 键  | 功能               |
+     |-----+--------------------|
+     | RET | 移动至下一行首字符 |
+     | +   | 移动至下一行首字符 |
+     | -   | 移动当上一行首字符 |
+     | ^   | 移动当前行非空字符 | 
+
+*** Movement by text blocks
+
+     | 键 | 功能                 |
+     |----+----------------------|
+     | e  | 移动到词尾           |
+     | E  | 移动到词尾，忽略标点 |
+     | (  | 移动到句首           |
+     | )  | 移动到句尾           |
+     | {  | 移动到段首           |
+     | }  | 移动到段尾           |
+
+*** Movement by searches
+    - /pattern 按pattern向前搜索
+    - ?pattern 按pattern向回搜索
+
+**** Repeating Searches
+     - n  同方向重复搜索
+     - / RET  重复向前搜索
+     - ? RET  重复向后搜索
+***** Changing through searching
+      - 将/和?搜索运算与改变文本结合
+      - d?move 删除从当前位置到上面的move位置
+**** Current Line Searches
+
+     | 键 | 功能               |
+     |----+--------------------|
+     | f  | 行内向前搜索       |
+     | fx | 行内向前搜索x      |
+     | Fx | 行内向回搜索x      |
+     | ;  | 重复同方向行内搜索 |
+     | ,  | 重复反方向行内搜索 |
+
+*** Movement by line number
+
+
+     | 键 | 功能                |
+     |----+---------------------|
+     | nG | 转至第n行           |
+     | `` | 回到G命令之前的位置 |
+     | '' | 回到G命令之前的行首 |
+
+** Ch4 Beyond the Basics
+*** More Command Combinations
+*** Options When Starting vi
+*** Making Use of Buffers
+*** Marking Your Place
+*** Other Advanced Edits
+** Ch5 Introducing the ex Editor
+*** ex Commands
+    - 古老的行编辑器
+*** Editing with ex
+    - ex命令须以:引导
+
+     | 键 | 功能   |
+     |----+--------|
+     | d  | 删除行 |
+     | m  | 移动行 |
+     | co | 拷贝行 |
+     | t  | 拷贝行 |
+**** Line Addresses
+     - 行地址定义有3种方式
+       - 显式行号
+       - 符号定义相对于当前位置的行数
+       - 搜索模式
+**** Defining a Range of Lines
+     - :3,18d  删除3到18行
+     - :160,224m23  将160到224行移到23行后面
+     - :23,29co100  将23到29行拷贝于100行之后
+**** Line Addressing Symbols
+     - :.,$d  删除当前行到文件尾
+     - 20,.m$ 移动20行到当前行到文件尾
+     - %d  删除文件所有行
+     - :%t$ 拷贝所有行，将之置于文件尾
+     - :.,+20d 删除当前行到下面的20行
+     - :226,$m.-2 移动226行到文件尾部分到当前行以上2行
+     - :.,+20# 显示当前行到下面20行行号
+**** Search Patterns
+     - :/pattern/d  删除下一个含有pattern的行
+     - :/pattern/+d 删除含有pattern行的下一行
+     - :/pattern1/,/pattern2/d  删除从含有pattern1到含有pattern2的行
+     - :.,/pattern/m23  从当前行到含有pattern行的内容拷贝到23行之后
+     - 删除中vi与ex的模式区别
+       - vi 删除模式间的内容，如 d/while 删除当前行置到while之间的内容
+       - ex 删除模式间行， 如 :.,/while/d 删除当前行到while所在行的内容
+**** Redefining the Current Line Position
+     - :100;+5 p 表示是在当前行处打印100到105行的内容
+     - :/pattern/;+10 p to print the next line containing pattern, plus
+       the 10 lines that follow it
+**** Global Searches
+     - :g 全局搜索
+     - :g! 搜索不含pattern的行
+     - :g/pattern
+     - :g/pattern/p  所有匹配行
+     - :g!/pattern/nu 所有不含有pattern的行，并显示行号
+     - :60,134g/pattern/p 在60到134行之间所有含pattern的行
+**** Combining ex Commands
+     - 用|隔断ex命令
+     - :1,3d | s/thier/their/
+     - :1,5 m 10 | g/pattern/nu
+*** Saving and Exiting Files
+    - :w
+    - :q
+    - :wq
+    - :x
+    - :w!
+    - :q!
+**** Renaming the Buffer
+     - :w practice.new
+**** Saving Part of a File
+     - :230,$w newfile
+     - :.,600w newfile
+**** Appending to a Saved File
+     - :1,10w newfile
+     - :340,$w >>newfile
+    
+*** Copying a File into Another File
+    - :read filename
+    - :r filename 将文件读入
+    - :185r /home/tim/data
+    - :$r /home/tim/data
+    - :0r /home/tim/data
+    - :/pattern/r /home/tim/data
+*** Editing Multiple Files
+    - ex commands enable you to switch between multiple files.
+**** Invoking vi on Multiple Files
+     - vi file1 file2
+     - :n file2   next file of file2
+     - :args list files
+     - :rewind(:rew) resets the current file to be the first file named
+       on the command line
+     - :last move to the last file on the command line.
+**** Calling in New Files
+     - :e filename
+     - :e #
+     - %  current filename
+     - #  alternate filename
+**** Switching Files from vi
+     - Ctrl ^ 切换，但前提是文件都已存储
+**** Edits Between Files
+     - 没看懂68-69页
+** Ch6 Global Replacement
+** Ch7 Advanced Editing
+** Ch8 Introduction to the vi Clones
+* PART II: Vim
+** Ch9 Vim (vi Improved): An Introduction
+*** Overview
+**** Author and History
+     - Bram Moolenaar invented Vim
+**** Why Vim?
+     - Vim extends Vi
+**** Compare and Contrast with vi
+**** Categories of Features
+     - Syntax extensions
+     - Programmer assistance
+     - Graphical user interface (GUI) features
+     - Scripting and plug-ins
+     - Initialization
+     - Session context
+     - Postprocessing
+     - Transitions
+     - Transparent editing
+     - Meta-information
+     - The black-hole register
+     - Keyword completion
+**** Philosophy
+     - touch editing
+    
+*** Aids and Easy Modes for New Users
+    - vimtutor
+** Ch10 Major Vim Improvements over vi 
+*** Built-in Help
+*** Startup and Initialization Options
+**** Command-Line Options
+**** Behaviors Associated to Command Name
+**** System and User Configuration Files
+**** Environment Variables
+***** How to set environment variables
+***** Environment variables relevant to Vim
+*** New Motion Commands
+**** Extended Regular Expressions
+**** Customizing the Executable

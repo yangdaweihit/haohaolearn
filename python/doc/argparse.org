@@ -1,0 +1,164 @@
+#+TITLE: Argparse
+#+AUTHOR: 杨大伟
+#+LATEX_CLASS: article 
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[utf-8]{ctex}
+#+LATEX_HEADER: \usepackage[margin=2cm]{geometry}
+
+
+** 实验
+
+- [[file:~/haohaolearn/python/practice/p004-argparse.py][p004-argparse.py]] 
+
+** 文档
+
+- [[https://docs.python.org/3.7/howto/argparse.html][tuorial]]: 介绍命令参数基本概念
+- [[https:docs.python.org/3/library/argparse.html][argparse]]: 模块文档 
+
+** 简介
+
+argparse是命令行选项、参数和子命令的解释器。基本步骤如下：
+
+- 创建解释器
+
+先创建一个ArgumentParser对象。
+
+#+BEGIN_EXPORT python
+parser = argparse.ArgumentParser(description='Process some integers.')
+#+END_EXPORT
+
+- 增加参数: 用ArgumentParser对象的函数add_argument函数增加参数。
+
+#+BEGIN_EXPORT python 
+
+# 调用parse_args()将会返回一个带有两个属性的对象，integers和accumulate。
+parser.add_argument('integers', metavar='N', type=int, nargs='+',
+                    help='an integer for the accumulator')
+parser.add_argument('--sum', dest='accumulate', action='store_const',
+                    const=sum, default=max,
+                    help='sum the integers (default: find the max)')
+#+END_EXPORT
+
+
+- 解析参数: ArgumentParser通过parse_args()方法解析参数。监视命令行，将每
+  个参数转变为合适的的类型，并调用合适的动作。
+
+#+BEGIN_EXPORT python 
+# 这个函数返回一个Namespace对象。
+parser.parse_args(['--sum', '7', '-1', '42'])
+#+END_EXPORT
+
+** ArugmentParser对象
+
+*** prog
+
+程序名称，默认为：sys.argv[0]。
+
+*** usage
+
+字符串，描述程序用法。默认从解析器的参数生成。
+
+*** desripton
+
+显示在参数帮助之前的文件，默认为空。
+
+*** epilog
+
+显示在参数帮助之后的文字，默认为空。
+
+*** parents
+
+ArgumentParser对象列表，其参数也应被包含。有时若干个解释需要共享一个公共
+参数集。此时不必重复定义这些参数，一个公共参数构成的解释可通过parents=参
+数传递给ArgumentParser对象。
+
+*** formatter_class
+
+自定义帮助输出类
+
+*** prefix_chars
+
+可选项前缀字符集，默认"-"。
+
+*** fromfile_prefix_chars
+
+额外参数从文件中读入时，文件前缀，默认：None。
+
+*** argument_default
+
+默认参数值，默认：None
+
+*** conflict_handler 
+
+解决冲突选项的策略，通常不必要。
+
+*** add_help
+
+增加一个帮助选项，默认：True。
+
+*** allow_abbreviate 
+
+允许长选项被缩写，若缩写无模糊，默认：True。
+
+
+** add_argument()方法
+
+#+BEGIN_EXPORT python
+ArgumentParser.add_argument(name or flags...[, action][, nargs][,
+const][, default][, type][, choices][, required][, help][, metavar][, dest])
+#+END_EXPORT
+
+*** name or flags
+
+选项名称可选字符串列表，如foo或-f, --foo。
+
+- 可选项参数： a series of flags
+- 位置参数: simple arugment name
+
+#+BEGIN_EXPORT python
+parser.add_argument('-f', '--foo')
+parser.add_argument('bar')
+#+END_EXPORT
+
+*** action
+
+ArgumentParser对象将命令行参与动作关联起来。这些动作可增加属性到
+parse_args()返回的对象上。动作的关键字参数定义了命令行参与应如何被处理。
+动作如下：
+
+- =store=: 存储了参数的值，即默认动作。
+- ~store_const~: 存储默认值，默认值由const关键字参数定义。该动作主要用于
+可选参数。
+- 'store_true'和'store_false'：存储布尔型常量。
+- 'append'：将反复赋值的参数形成一个列表。
+- 'append_const': 当多个参数储存常量在同一列表时，采用这种动作。
+- 'count'：统计参数重复次数。
+- 'version': 这个动作意味着要有一个关键字参数'version='赋与版本号。
+
+adf adsfds
+
+*** nargs
+
+ArgumentParser对象将一个命令行参与与一个动作关联起来。nargs关键字参数将
+不同数量的命令行参数与一个动作关联起来。
+
+- N(整数): 将参数归于一个列表。
+- '?': 从命令行中解析一个参数。若没有参性，将用default设定的值。
+- '*': 所有参数集成为一个列表。
+- '+': 所有参数集成为一个列表。如果没有参数，则会有一个错误消息。
+- 'argparse.REMAINDER': 所有参数分别集成为一个列表。
+
+如果没有指定nargs，则每个参数只有一个值，行为由action决定。
+
+*** const
+
+const参数用于设定常量值，这些值不是从命令行读入的，但需要由不同的动作。
+主要两个主要用处：
+
+- 动作为action='store_const'和arg='append_const'时。这些动作将const值赋
+  给参数。
+
+- 可选参数，配合nargs='?'。当可选参数不被设定时，const值将用于可选参数的
+  值。
+
+

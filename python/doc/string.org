@@ -1,0 +1,57 @@
+#+TITLE: str类及string模块
+#+AUTHOR: 杨大伟
+#+LATEX_CLASS: article 
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[utf-8]{ctex}
+#+LATEX_HEADER: \usepackage[margin=2cm]{geometry}
+
+
+* 前言
+
+  - str是内建类，将参数转换为字符串，它有很多自己的方法，然而为了丰富功
+    能，还有一个string模块，提供了公共的字符串操作函数。
+  - 见[[https://stackoverflow.com/questions/2026038/relationship-between-string-module-and-str][str vs. string]]
+  - 练习：p003-string.py 
+
+* str类([[https://docs.python.org/3/library/stdtypes.html#textseq][Text Sequence Type — str]])
+  - Python的内建类型有str类字符串，是一个不可修改的Unicode序列。
+  - 表达见示例。
+  - 没有character型，单一字符用长度为1的字符串表达。
+  - 可用str构造函数生成字符串变量。
+  - 可用str.join()和io.String()由多个片断快速构建字符串。
+
+** 字符串方法(String Method)  
+   - 支持三种格式化：
+     + C printf 
+     + str.format(), Formatting String Syntax, Custom String Formatting
+     + f-字符串
+   - 方法见示例。
+
+** printf风格字符串格式化
+   
+   - [[https://docs.python.org/3/library/stdtypes.html#old-string-formatting][printf-style String Formatting]]
+   - 该风格已不被提倡
+
+* string模块([[https://docs.python.org/3.7/library/string.html][string — Common string operations]])
+
+** 字符串常量 
+
+  - 模块中定义了常量，可通过打印看到各自的内容。
+
+** 自定义字符串格式
+
+  - str.format()方法和Farmatter类格式化字符串的语法相同
+
+** 格式化字符串语法
+
+   - 置换域由{}包围；
+   - 不在{}内的内容被视为文本，拷贝到输出中；
+   - 若需要在输出中包括{或}，采用{{和}}的形式。
+   - 置换域语法："{" [field_name] ["!" conversion] [":" format_spec] "}"
+     + 由域名field_name开始，表示其值将被插入在此，并被格式化。
+     + 后面可跟其中一个: !s, !r, !a
+     + 再后面跟一个由 : 引导的非默认的格式化定义(采用格式定义迷你语言)。格式化主要即在冒号后定义。
+     + field_name有两种形式：位置参数 or 命名关键字参数
+   - 若位置参数为空，则以顺序插入被格式化字符串。
+   - 格式定义迷你语言：[[fill]align][sign][#][0][width][grouping_option][.precision][type]
+   

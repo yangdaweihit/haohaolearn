@@ -1,0 +1,8 @@
+* 配置
+** 系统粘帖板与寄存器
+   - ~sudo apt install vim-gtk~
+   - ~vim --version | grep clipboard~ 确认 ~+clipboard~
+   - 从vim中拷贝一行到粘帖板 ~*+yy~
+   - 从粘帖板拷贝到vim中 ~*+p~
+   - 若在 ~~/.vim/vimrc~ 中设置 ~set clipboard=unnamedplus~ ，即可粘帖板与寄
+     存器同步
