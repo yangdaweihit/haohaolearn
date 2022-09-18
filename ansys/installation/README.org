@@ -20,6 +20,10 @@
    #+begin_src 
    sudo ./INSTALL
    #+end_src
+ 
+   将`_SolidQUAD_`中的`ansys_inc`文件夹中的`v202`和`shared_files`拷贝覆盖到安装目录`ansys_inc`中。
+
+
 * 配置
 ** 路径
    #+begin_src 
