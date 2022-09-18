@@ -1,6 +1,6 @@
 * 安装
   - 系统：Debian/Linux Bullseye
-  - 版本：ANSYS 2020R1
+  - 版本：ANSYS 2020R2
 ** 依赖：
     #+begin_src 
     sudo apt-get install libmotif-dev libxtst-dev  libxt-dev libzip-dev libxmu-dev libpng-dev 
@@ -24,7 +24,7 @@
 ** 路径
    #+begin_src 
    sudo vi /etc/environment
-   PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/ansys_inc/v201/ansys/bin
+   PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/ansys_inc/v202/ansys/bin
    #+end_src
 ** 动态链接程序
     #+begin_src 
@@ -42,7 +42,7 @@
     unset QT4_IM_MODULE
     unset CLUTTER_IM_MODULE
 
-    /usr/ansys_inc/v201/ansys/bin/ansys201 -g
+    /usr/ansys_inc/v202/ansys/bin/ansys202 -g
 
     export XMODIFIERS="@im=fcitx"
     export GTK_IM_MODULE=fcitx
@@ -50,8 +50,4 @@
     export QT4_IM_MODULE=fcitx
     export CLUTTER_IM_MODULE=xim
     #+end_src
-** 启动器
-   #+begin_src 
-   launcher
-   #+end_src
    
