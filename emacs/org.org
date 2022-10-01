@@ -17,6 +17,15 @@
 	- S M Right: 题目向下一层
 	- S M Left: 题目向上一层
 	- C c SPC: 清除当前格
+** Image
+   - Preview image in org mode
+     #+begin_src 
+     C-c C-x C-v
+     #+CAPTION: This is the caption for the next figure link (or table)
+     #+NAME:   fig:SED-HR4049
+     #+ATTR_ORG: :width 600
+     [[./path/to/image$_file]]
+     #+end_src
 ** ToDo Items
    - 标题由 ~TODO~ 开始，该标题就成为TODO项；
    - 用 ~C-c C-t~ 循环
