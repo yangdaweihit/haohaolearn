@@ -12,9 +12,7 @@
 # from numpy import *
 
 import numpy as np
-import matplotlib.pyplot as plt
 import math
-import time
 
 if __name__ == '__main__':
 
