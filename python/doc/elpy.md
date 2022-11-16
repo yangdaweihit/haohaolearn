@@ -104,6 +104,10 @@ sudo apt install elpa-elpy python3-venv
 
     执行当前脚本
 
+### matplotlib显示图片
+
+- 安装python3-tk
+- matplotlib.use('TkAgg')
 
 ## 参照
 
