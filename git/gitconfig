@@ -1,0 +1,9 @@
+[user]
+	name = yangdawei
+	email = yangdawei.hit@gmail.com
+[credential]
+	helper = store
+[http "https://github.com"]
+	proxy = http://127.0.0.1:1080
+[core]
+	editor = vim
