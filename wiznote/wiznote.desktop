@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Wiznote
+Comment=Wiznote Client for Linux
+Exec=/home/wall-e/Documents/software/wiznote/wiznote-desktop-0.1.92-linux-x86_64.AppImage %F
+Icon=wiznote.png
+StartupWMClass=Wiznote
+Type=Application
+Categories=Networks
+Keywords=wiznote
