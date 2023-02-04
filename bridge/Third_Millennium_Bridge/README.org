@@ -8,15 +8,13 @@ bow-string bridge in Zaragoza, Spain. It crosses the Ebro.
 It was opened on 7 June 2008. The bridge displays a length of 270 m, a
 width of 48 m, and a main span of 216 m.
 
-Coordinates: 41°39′56″N 0°54′30″W
-Crosses: Ebro
-Locale: Zaragoza, Spain
-Design:	Bow-string bridge
-Total length:	270 m
-Width:	48 m
-Longest span:	216 m
-
-** Award
+- Coordinates: 41°39′56″N 0°54′30″W
+- Crosses: Ebro
+- Locale: Zaragoza, Spain
+- Structure:	Bow-string bridge / Tied-arched bridge
+- Total length:	270 m
+- Width:	48 m
+- Longest span:	216 m
 
 ** Photos
 
