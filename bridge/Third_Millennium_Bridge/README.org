@@ -1,0 +1,31 @@
+* Third Millennium Bridge
+
+** Introduction
+
+The Third Millennium Bridge (Spanish: Puente del Tercer Milenio) is a
+bow-string bridge in Zaragoza, Spain. It crosses the Ebro.
+
+It was opened on 7 June 2008. The bridge displays a length of 270 m, a
+width of 48 m, and a main span of 216 m.
+
+Coordinates: 41°39′56″N 0°54′30″W
+Crosses: Ebro
+Locale: Zaragoza, Spain
+Design:	Bow-string bridge
+Total length:	270 m
+Width:	48 m
+Longest span:	216 m
+
+** Award
+
+** Photos
+
+#+CAPTION: Favorita blanca 2345 grises SIMETRICA
+#+NAME:   fig:favorita
+#+ATTR_HTML: :width 500px
+[[./Favorita.jpg]]
+
+** Link
+
+- https://en.wikipedia.org/wiki/Third_Millennium_Bridge
+- https://www.arenasing.com/projects/signature-bridges-arch-bridges-urban-bridges/third-millennium-bridge
