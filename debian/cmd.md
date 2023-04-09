@@ -42,6 +42,10 @@
 - 应用：`sudo mkfs -t ext4 /dev/sdb1`
 - 参考：https://linux.die.net/man/8/mkfs
 
+## du
+
+- `du -sh [dir]`
+
 ## ncdu
 
 - 查看磁盘用量
@@ -87,7 +91,6 @@ apt-cache depends <package-name>
 ```
 apt-cache rdepends <package-name>
 ```
-
 
 ## 系统查询
 
