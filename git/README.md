@@ -77,7 +77,12 @@ git config --global credential.helper store
 并配置相应的`.git-credentials`文件：
 
 ```	
-https://user:token@github.com
+https://[user]:[token]@github.com
+```
+
+例如：
+```
+https://yangdaweihit:[token]@github.com
 ```
 
 ### 建立仓库步骤
