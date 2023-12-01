@@ -99,6 +99,10 @@ vi .config/fontconfig/fonts.conf
 sudo apt install fonts-wqy-zenhei
 ```
 
+## 终端字体配置
+
+- Fira Code 14pt
+
 ## 配置中文编码
 
 ```
